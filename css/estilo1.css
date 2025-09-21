@@ -1,0 +1,87 @@
+/* Asegura que padding y border no afecten ancho total */
+* {
+    box-sizing: border-box;
+}
+
+header.encabezado {
+    display: flex;            
+    justify-content: flex-end;
+    background: #B82F25;
+    min-height: 45px;   
+    scroll-behavior: smooth;
+}
+
+div.cabecera {
+    display: flex;
+    flex-direction: row;
+    align-items: center;        
+    padding: 0 10px;  
+    margin: 0;                
+}
+
+.logo {
+    display: flex;
+    margin-right: 20px; /* Add margin to the right for spacing */
+}
+
+.logo img {
+    height: 50px;
+}
+
+header div.cabecera h1 {
+    text-align: center;
+    font-size: 1rem;
+    color: #FFFF;
+    font-family: century;
+    padding-right: 20px;
+    margin: 0; 
+}
+
+div i {
+    padding-right: 15px; 
+    color: #FFFF;
+}
+
+.separador {
+    width: 1px;
+    height: 60%; 
+    background-color: #FFFF;
+    margin: 0 15px; 
+    
+}
+
+header.nav {
+    display: flex;            
+    justify-content: space-between;
+    height: 70px;  
+    align-items: center;
+    padding: 20px 40px;  
+    background: #FFFF;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+nav a {
+    font-weight: 600;
+    padding-right: 15px; 
+}
+
+nav a:hover {
+    color: #D19733;
+    transform: translate(0, -5px);
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+    }
+
+    header.nav {
+        padding: 10px 20px; 
+    }
+}
