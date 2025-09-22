@@ -45,7 +45,7 @@ header div.cabecera h1 {
 }
 
 
-div i {
+div.iconos i {
     padding-right: 15px; 
     color: #FFFF;
 }
@@ -91,7 +91,7 @@ nav a {
 
 nav a:hover {
     color: #D19733;
-    transform: translateY(3px); /* puedes combinar más efectos */
+    transform: translateY(2px); /* puedes combinar más efectos */
 }
 
 .banner-section {
@@ -124,6 +124,25 @@ nav a:hover {
     font-size: 3rem;         /* tamaño grande de título */
     font-weight: bold;
     line-height: 1.2;    
+}
+
+button{
+    background-color: #B82F25;
+    color: #000000;
+    border-radius: 1px;
+}
+
+div.emp i{
+    padding-right: 15px; 
+    color: #0000;
+}
+
+div.empieza{
+    display: flex;
+    flex-direction: row;
+    align-items: center;        
+    padding: 10px;  
+    margin: 0;
 }
 
 
