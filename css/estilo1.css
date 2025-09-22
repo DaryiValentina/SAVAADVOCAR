@@ -51,7 +51,7 @@
 .container {
     grid-column: 2 / span 10; /* aquí es donde el container "ocupa 10 columnas" */
     /* opcional: limita ancho máximo si quieres (pero si quieres ver 12 columnas exactas quita max-width) */
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     margin: 0 auto;
     width: 100%;
     /* el container puede usar su propia grilla interna: */
@@ -69,6 +69,8 @@
 }
 /*Footer con la imagen*/
 .footer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* ahora .container puede usar grid-column */
   position: relative;
   background-image: url(../img/apreton-de-manos.jpg);
   background-size: cover;      /* hace que la imagen cubra todo el contenedor */
@@ -77,6 +79,7 @@
   color: white;
   padding: 10px 20px 20px 20px;
   font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
   z-index: 1;
   grid-column: 1 / -1; /* ocupa todo el ancho visual del row donde esté */
 }
@@ -107,7 +110,7 @@
 }
 
 .redes {
-    margin: 10px 10px;
+    margin: 15px 10px;
     width: auto;
     display: flex;
     justify-content: space-between;
@@ -135,12 +138,13 @@
 .servicios-lista {
   list-style: none;      /* quita las viñetas por defecto */
   padding: 0;
-  margin: 0;
+  margin-top: 20px;
 }
 
 .servicios-lista li {
   position: relative;
   margin: 10px 0;        /* espacio entre items */
+  transition: transform 0.3s ease-in-out; /* Transición suave */
 }
 
 .servicios-lista li a {
@@ -165,6 +169,10 @@
 }
 
 /* Hover: cambia color del círculo y texto */
+.servicios-lista li:hover {
+  transform: translateY(2px); /* mueve ligeramente a la derecha */
+}
+
 .servicios-lista li:hover::before {
   background: #D19733;    /* círculo cambia a verde (puedes ajustar) */
 }
@@ -176,12 +184,14 @@
 /* Botón WhatsApp */
 .btn-whatsapp {
   display: inline-block;
+  margin-top: 20px;
   padding: 10px 20px;
   background: #25D366;
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
+  width: 100%;
 }
 
 .btn-whatsapp:hover {
