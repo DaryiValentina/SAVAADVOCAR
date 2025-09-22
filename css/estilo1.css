@@ -166,11 +166,11 @@
 
 /* Hover: cambia color del círculo y texto */
 .servicios-lista li:hover::before {
-  background: #00ff99;    /* círculo cambia a verde (puedes ajustar) */
+  background: #D19733;    /* círculo cambia a verde (puedes ajustar) */
 }
 
 .servicios-lista li:hover a {
-  color: #00ff99;
+  color: #D19733;
 }
 
 /* Botón WhatsApp */
