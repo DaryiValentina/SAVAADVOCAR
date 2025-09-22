@@ -1,0 +1,189 @@
+/* Tipografía */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif:wght@700&display=swap');
+
+/* Para dejar las margenes en 0 y no quede espacio en blanco que no quiera */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Pruebas columnas */
+.grid.debug {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 columnas iguales */
+  gap: 10px; /* espacio entre columnas */
+  margin: 20px 0;
+  background: #ff020233; /* leve rojo de fondo */
+  padding: 10px;
+}
+
+.debug-col {
+  border: 1px dashed #333;   /* borde punteado */
+  background: rgba(0, 150, 255, 0.2); /* celeste de prueba */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+/* ---------- GRID a nivel de página (envoltorio) ---------- */
+.page-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+}
+
+/* Grid 12 columnas */
+.grid {
+  grid-column: 2 / span 10; /* ocupa 10 columnas centradas */
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 20px;
+  background-color: aqua;
+}
+
+/* Columnas personalizadas */a
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+
+/* ---------- Container: ocupa 10 columnas centradas (2..11) ---------- */
+.container {
+    grid-column: 2 / span 10; /* aquí es donde el container "ocupa 10 columnas" */
+    /* opcional: limita ancho máximo si quieres (pero si quieres ver 12 columnas exactas quita max-width) */
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    /* el container puede usar su propia grilla interna: */
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columnas internas = espacio total para tus bloques */
+    gap: 20px;
+    padding: 40px 0; /* separación superior/inferior dentro del container */
+}
+
+.inner-grid {
+  grid-column: span 7;          /* ocupa 7 columnas del container */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;         /* centra el bloque en el container */
+}
+/*Footer con la imagen*/
+.footer {
+  position: relative;
+  background-image: url(../img/apreton-de-manos.jpg);
+  background-size: cover;      /* hace que la imagen cubra todo el contenedor */
+  background-position: center; /* centra la imagen */
+  background-repeat: no-repeat; /* evita que se repita */
+  color: white;
+  padding: 10px 20px 20px 20px;
+  font-family: 'PT Sans', sans-serif;
+  z-index: 1;
+  grid-column: 1 / -1; /* ocupa todo el ancho visual del row donde esté */
+}
+/* Capa oscura encima de la imagen */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8); /* negro con opacidad */
+  z-index: -1; /* se queda detrás del contenido */
+}
+
+/*Link correo*/
+.linkblanco {
+  color: white;             /* siempre blanco */
+  text-decoration: underline; /* siempre subrayado */
+}
+
+/*Contenedor logo nombre*/
+.logo-img {
+  max-width: 200px;   /* ajusta al tamaño que quieras */
+  height: auto;       /* mantiene proporción */
+  margin-bottom: 15px; /* espacio debajo del logo */
+  display: block;      /* para que no quede inline */
+}
+
+.redes {
+    margin: 10px 10px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Línea divisoria */
+.divider {
+  grid-column: 1 / -1;
+  border-top: 1px solid white;
+  margin-bottom: 20px;
+}
+
+/* Logo inferior */
+.footer-logo {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo img {
+  height: 60px;
+}
+
+.servicios-lista {
+  list-style: none;      /* quita las viñetas por defecto */
+  padding: 0;
+  margin: 0;
+}
+
+.servicios-lista li {
+  position: relative;
+  margin: 10px 0;        /* espacio entre items */
+}
+
+.servicios-lista li a {
+  color: white;          /* texto blanco */
+  text-decoration: none; /* sin subrayado */
+  padding-left: 30px;    /* espacio para el círculo */
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.servicios-lista li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px; 
+  height: 12px;
+  border-radius: 50%;
+  background: white;      /* círculo inicial blanco */
+  transition: background 0.3s ease;
+}
+
+/* Hover: cambia color del círculo y texto */
+.servicios-lista li:hover::before {
+  background: #00ff99;    /* círculo cambia a verde (puedes ajustar) */
+}
+
+.servicios-lista li:hover a {
+  color: #00ff99;
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-whatsapp:hover {
+  background: #20b857;
+}
