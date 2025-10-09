@@ -7,6 +7,7 @@
     <title>SAVAADVOCAR</title>
     <link rel="icon" href="img/Logo Trans.png" type="image/png">
     <link rel="stylesheet" href="css/estilo2.css">
+    <script src="js/servicios.js" defer></script>
 </head>
 <body>
     
@@ -46,55 +47,58 @@
 
     <section class="servicios">
         <div class="btn">
-            <button>Recuperación de cartera</button>
-            <div class="cartera">
-                <div>
-                    <img src="" alt="">
-                    <div class="texto">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere neque quos fugit est reprehenderit rem earum incidunt assumenda pariatur odio aperiam architecto iste debitis aut, delectus distinctio exercitationem recusandae itaque.</p>
-                    </div>
-                </div>
-            </div>
-            <button>Propiedad horizontal</button>
-            <button>Arrendamiento y venta de inmuebles</button>
-            <button>Procesos de legalización de visado</button>
-            <button>Servicios de extranjería visado España</button>
+            <button data-servicio="cartera">Recuperación de cartera</button>
+            <button data-servicio="visado">Visado y pasaporte para España</button>
+            <button data-servicio="otros">Otros servicios</button>             
         </div>
     </section>
 
-    <section class="empieza">
-        <div class="superior">
-            <h3>Empieza en minutos</h3>
+    <section id="contenido-dinamico">
+        <div class="contenido-caja">
+        <img src="img/imagen-ejemplo.jpg" alt="Imagen ilustrativa" class="contenido-img"/>
+        <div class="contenido-texto">
+            <h3 id="contenido-titulo">Título</h3>
+            <p id="contenido-descripcion">Descripción general del servicio seleccionado.</p>
+            <ul class="contenido-lista">
+            <li><i class="fa-solid fa-box-archive"></i> <span id="item1">Item 1</span></li>
+            <li><i class="fa-solid fa-file-lines"></i> <span id="item2">Item 2</span></li>
+            <li><i class="fa-solid fa-comments"></i> <span id="item3">Item 3</span></li>
+            <li><i class="fa-solid fa-comments"></i> <span id="item4">Item 4</span></li>
+            </ul>
+            <button class="boton-accion">Inicia tu proceso</button>
         </div>
-        <div>
-            <ol >
-                <li>
-                    <div class="emp">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span>Agenda tu cita</span>
-                    </div>               
-                </li>
-                <li>
-                    <div>
-                        <i class="fa-solid fa-file"></i>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <span>Evaluamos tu caso</span>
-                    </div>               
-                </li>
-                <li>
-                    <div>
-                        <i class="fa-solid fa-file-invoice"></i>                        
-                        <span>Diseñamos la estrategia</span>
-                    </div>               
-                </li>
-                <li>
-                    <div>
-                        <i class="fa-solid fa-bars-progress"></i>
-                        <span>Iniciamos la gestión</span>
-                    </div>               
-                </li>
-            </ol>
         </div>
     </section>
+
+
+    <br><br>
+    <section class="empieza">
+        <div class="titulo">
+            <h3>Empieza en minutos</h3>
+        </div>
+        <br><br>
+        <div class="paso rojo">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Agenda tu cita</span>
+        </div>
+
+        <div class="paso blanco">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Evaluamos tu caso</span>
+        </div>
+
+        <div class="paso rojo">
+            <i class="fa-solid fa-file-invoice"></i>
+            <span>Diseñamos la estrategia</span>
+        </div>
+
+        <div class="paso blanco">
+            <i class="fa-solid fa-bars-progress"></i>
+            <span>Iniciamos la gestión</span>
+    </div>
+    </section>
+
+
+    
 </body>
 </html>
