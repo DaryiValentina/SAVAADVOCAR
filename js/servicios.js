@@ -2,7 +2,7 @@ const dataServicios = {
       cartera: {
         titulo: "Recupera la liquidez de tu Comunidad sin desgastes legales",
         descripcion: "Recupera la liquidez de tu Comunidad con procesos claros, ágiles y respetuosos. En SAVA España reducimos la morosidad y te damos tranquilidad en cada gestión.",
-        img: "img/imagen-ejemplo.jpg",  // Ruta de imagen
+        img: "img/sev-cartera.jpg",  // Ruta de imagen
         items: [
             "Cobro administrativo y prejudírico.",
             "Preparación documental para vía judicial.",
@@ -17,7 +17,7 @@ const dataServicios = {
       visado: {
         titulo: "Acompañamos tu trámite de extranjería en España y desde Colombia",
         descripcion: "Te guiamos en cada paso de tu proceso de extranjería, desde Colombia o España. Con asesoría experta y cercana, tus trámites de visado y residencia serán más seguros y ordenados.",
-        img: "img/visado.jpg",
+        img: "img/sev-visado.jpg",
         items: [
             "Arraigo sociolaboral",
             "Arraigo socioformativo",
@@ -34,7 +34,7 @@ const dataServicios = {
       otros: {
         titulo: "Más soluciones legales para ti",
         descripcion: "Además de extranjería y cartera, en SAVA España te asesoramos en reclamaciones bancarias, gestión inmobiliaria y compra directa de inmuebles. Soluciones legales adaptadas a ti.",
-        img: "img/otros-servicios.jpg",
+        img: "img/sev-otros.jpg",
         items: [
             "Reclamaciones por tarjetas revolving",
             "Gestión inmobiliaria",
@@ -85,3 +85,24 @@ const dataServicios = {
         });
       });
     });
+    
+    //ANIMACION DE SCROLL QUE SE PODRÍA VER SI QUITAR O NO 
+    document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('.nav');
+    const scrollThreshold = 50; // Cantidad de píxeles para aplicar el cambio
+
+    function updateNavStyle() {
+        if (window.scrollY > scrollThreshold) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    }
+
+    // 1. Ejecutar al inicio por si la página ya está desplazada al cargar
+    updateNavStyle();
+
+    // 2. Ejecutar cada vez que el usuario haga scroll
+    window.addEventListener('scroll', updateNavStyle);
+});
+

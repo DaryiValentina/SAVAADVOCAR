@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Gandhi+Sans&family=Gandhi+Serif&display=swap');
+/*Gandhi Serif=>Textos informativos
+Gandhi Sans=>Elementos publicitarios y textos no tan extensos*/
+/* Asegura que padding y border no afecten ancho total */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 5000px;
+    scroll-behavior: smooth;
+}
+
+/*HEADER*/
+header.encabezado {
+    display: flex;     
+    flex-direction: column;
+    background: #B82F25;
+    min-height: 45px;    
+    overflow: visible;
+}
+
+div.cabecera {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;        
+    padding: 10px;  
+    margin: 0;              
+}
+
+.logo {
+    display: flex;
+    margin-right: 20px; /* Add margin to the right for spacing */
+}
+
+.logo img {
+    height: 60px;
+}
+
+header div.cabecera h1 {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #FFFF;
+    font-family: 'Gandhi Sans', sans-serif;
+    /*padding-right: 20px;*/
+    margin: 0; 
+}
+
+div.iconos i {
+    padding-right: 15px; 
+    color: #FFFF;
+}
+
+.separador {
+    height: 25px; 
+    /*background-color: #FFFF;*/
+    margin: 0 20px;     
+    border-right: 1.5px solid #FFFF;
+}
+
+/* Definir un espaciado diferente en la segunda línea */
+.separador:last-child {
+	margin: 0 40px 0 4px;		
+}
+
+.nav {
+    display: flex;            
+    justify-content: space-between;
+    height: 70px;  
+    align-items: center;
+    padding: 20px 140px;  
+    background: #FFFF;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out; /*PARA ANIMACIÓN DE SCROLL*/
+}
+
+/*PARA ANIMACION DE SCROLL*/
+.nav.scrolled {
+    /* Fondo más sólido o con transparencia para que no se mezcle */
+    background-color: rgba(255, 255, 255, 0.95); 
+    
+    /* Agrega una sombra para que "salte" sobre el contenido */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    
+    /* Puedes reducir el padding si quieres que sea más compacta al hacer scroll */
+    padding: 15px 140px; 
+    
+    /* Agrega una transición para que el cambio sea suave */
+    transition: all 0.3s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #000000;   
+    font-family: 'Gandhi Sans', sans-serif;
+}
+
+nav a {
+    display: inline-block;                 
+    font-weight: 600;
+    padding-right: 30px;
+    transition: color 0.3s ease, transform 0.3s ease; /* <– incluye transform */
+    will-change: transform;
+}
+
+nav a:hover {
+    color: #D19733;
+    transform: translateY(2px); /* puedes combinar más efectos */
+}
+
+.titulo {
+    background-color: #B82F25;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-family: 'Gandhi Sans', sans-serif;    
+    /* Sombra para que el "rectángulo" parezca flotar un poco */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    /* ---------------------------------------------------- */
+}
+
+.titulo h1 {
+    color: #fff;
+    font-size: 1.7rem;
+    margin: 0;
+    font-weight: 600; /* Un poco menos negrita para que la sombra del texto destaque */
+    
+    /* ---------------------------------------------------- */
+    /* Sombra para el texto */
+    text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.4); 
+    /* ---------------------------------------------------- */
+}
+
+.banner-section {
+    position: relative;      /* para poder posicionar el texto encima */
+    width: 100%;
+    height: auto;           /* altura fija para el banner */
+    overflow: hidden;
+}
+
+.banner-section img {
+    width: 100%;
+    height: 100%;
+    /*object-fit: cover;       /* que la imagen cubra todo el ancho/alto */
+    /*display: block;*/
+}
+
+.texto1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    transform: translate(-50%, -50%); /* centra horizontal y vertical */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    font-family: 'Gandhi Sans', sans-serif;
+    text-align: center;
+    color: #fff;
+    padding: 20px 20px;         
+    /*max-width: 40%;*/
+}
+
+.texto1 h2 {    
+    font-size: 2.5rem;         /* tamaño grande de título */
+    font-weight: bold;
+    line-height: 1.2;    
+}
+
+.texto1 h6{
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.2; 
+}
+
+.contenedor-texto {
+    flex: 1;  
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;    
+}
+
+.btn-contacto {    
+    font-family: 'Gandhi Sans', sans-serif;
+    background-color: #CB4F24;
+    color: #000;
+    margin-top: 10px;
+    padding: 14px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 300px;
+}
+
+.btn-contacto:hover {
+    background-color: #D19733;
+}
+
+/*SECCIÓN ARTÍCULOS INFORMATE*/
+
+.articulos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 400px 400px;
+    gap: 0; /*Espacio entre celdas*/
+    width: 100%;
+    margin-bottom: 0; 
+    padding-bottom: 0;
+}
+
+.articulos-card{
+    position: relative;
+    background-size: cover; /*Para que la imagen de fondo cubra el espacio completo*/
+    background-position: center;
+    background-repeat: no-repeat;
+    /*transition: transform 0.3s ease-in-out;
+    cursor: pointer;*/
+}
+
+/*.articulos-card:hover {
+    /* Pequeño efecto al pasar el ratón para dar interactividad 
+    transform: scale(1.01);
+}*/
+
+.articulos .articulos-card:nth-child(1) {
+    background-image: url('../img/deuda.jpg'); 
+}
+
+.articulos .articulos-card:nth-child(2) {
+    background-image: url('../img/pasaporte'); 
+}
+
+.articulos .articulos-card:nth-child(3) {
+    background-image: url('../img/golden-visa.jpg'); 
+}
+
+.articulos .articulos-card:nth-child(4) {
+    background-image: url('../img/solicitud-visado.jpg'); 
+}
+
+.btn-informate{
+    position: absolute;
+    top: 80%;
+    transform: translate(-50%);
+    background-color: #B82F25; 
+    color: #fff;
+    font-family: 'Gandhi Sans', sans-serif;
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px; 
+    text-decoration: none;
+    /*text-transform: uppercase; /* Mayúsculas*/
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+
+    /* Transición suave para el efecto hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-informate:hover {
+    background-color: #D19733; 
+    transform: translate(10, 10) scale(1.05); 
+}
+
+.articulos-card:nth-child(1) .btn-informate,
+.articulos-card:nth-child(3) .btn-informate {
+    right: -30px; 
+}
+
+.articulos-card:nth-child(2) .btn-informate,
+.articulos-card:nth-child(4) .btn-informate {
+    left: 120px; 
+}
+
+/*SECCIÓN TARJETAS LO ÚLTIMO*/
+.lo-ultimo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.lo-ultimo h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+    grid-template-rows: 500px;
+    gap: 40px;
+    justify-items: center;
+}
+
+/* TARJETAS */
+.tarjeta {
+    border-radius: 50px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    }
+
+/* IMAGEN */
+.imagen {
+    background-color: #b5312e; 
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.imagen img {
+    width: 100%;
+    display: block;
+    border-radius: 35px;
+    padding: 30px;
+}
+
+
+/* TEXTO */
+.contenido p {
+    background-color: #000;
+    font-family: 'Gandhi Serif', serif;
+    color: #fff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* BOTÓN */
+.btn {
+    background: linear-gradient(180deg, #b5312e 0%, #d14825 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(180deg, #92231e 0%, #b5312e 100%);
+}
+
