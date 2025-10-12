@@ -17,12 +17,13 @@ html{
     scroll-behavior: smooth;
 }
 
-/*HEADER*/
+/*-------------HEADER-------------*/
 header.encabezado {
     display: flex;     
     flex-direction: column;
     background: #B82F25;
-    min-height: 45px;    
+    min-height: 45px;   
+    /*position: sticky; */ 
     overflow: visible;
 }
 
@@ -32,7 +33,8 @@ div.cabecera {
     justify-content: flex-end;
     align-items: center;        
     padding: 10px;  
-    margin: 0;              
+    margin: 0;   
+    /*border-right: solid; */           
 }
 
 .logo {
@@ -83,7 +85,7 @@ div.iconos i {
     transition: all 0.3s ease-in-out; /*PARA ANIMACIÓN DE SCROLL*/
 }
 
-/*PARA ANIMACION DE SCROLL*/
+/*-------------PARA ANIMACION DE SCROLL-------------*/
 .nav.scrolled {
     /* Fondo más sólido o con transparencia para que no se mezcle */
     background-color: rgba(255, 255, 255, 0.95); 
@@ -105,6 +107,14 @@ a {
     font-family: 'Gandhi Sans', sans-serif;
 }
 
+.menu-toggle, .close-menu, .mobile-menu-title {
+    display: none;
+}
+
+.nav .nav-menu {
+    display: flex; /* Asegura que los enlaces sigan en línea */
+}
+
 nav a {
     display: inline-block;                 
     font-weight: 600;
@@ -117,6 +127,8 @@ nav a:hover {
     color: #D19733;
     transform: translateY(2px); /* puedes combinar más efectos */
 }
+
+/*-------------BANNER----------------*/
 
 .titulo {
     background-color: #B82F25;
@@ -131,7 +143,7 @@ nav a:hover {
 
 .titulo h1 {
     color: #fff;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     margin: 0;
     font-weight: 600; /* Un poco menos negrita para que la sombra del texto destaque */
     font-family: 'Gandhi Sans', sans-serif;
@@ -172,13 +184,13 @@ nav a:hover {
 
 .texto1 h2 {    
     font-family: 'Gandhi Sans', sans-serif;
-    font-size: 2.5rem;         /* tamaño grande de título */
+    font-size: 1.7rem;         /* tamaño grande de título */
     font-weight: bold;
     line-height: 1.2;    
 }
 
 .texto1 h6{
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     line-height: 1.2; 
 }
@@ -199,20 +211,20 @@ nav a:hover {
     background-color: #CB4F24;
     color: #000;
     margin-top: 10px;
-    padding: 14px 40px;
-    font-size: 1rem;
+    padding: 14px 30px;
+    font-size: 0.9rem;
     font-weight: 600;
     border-radius: 30px;
     text-decoration: none;
     transition: all 0.3s ease;
-    width: 300px;
+    width: 250px;
 }
 
 .btn-contacto:hover {
     background-color: #D19733;
 }
 
-/*SECCIÓN ARTÍCULOS INFORMATE*/
+/*-------------SECCIÓN ARTÍCULOS INFORMATE-------------*/
 
 .articulos{
     display: grid;
@@ -233,10 +245,6 @@ nav a:hover {
     cursor: pointer;*/
 }
 
-/*.articulos-card:hover {
-    /* Pequeño efecto al pasar el ratón para dar interactividad 
-    transform: scale(1.01);
-}*/
 
 .articulos .articulos-card:nth-child(1) {
     background-image: url('../img/deuda.jpg'); 
@@ -257,7 +265,7 @@ nav a:hover {
 .btn-informate{
     position: absolute;
     top: 80%;
-    transform: translate(-50%);
+    transform: translate(-50%,0);
     background-color: #B82F25; 
     color: #fff;
     font-family: 'Gandhi Sans', sans-serif;
@@ -289,7 +297,7 @@ nav a:hover {
     left: 120px; 
 }
 
-/*SECCIÓN TARJETAS LO ÚLTIMO*/
+/*-------------SECCIÓN TARJETAS LO ÚLTIMO-------------*/
 .lo-ultimo {
     background-color: #c2c2c2; /* Fondo beige claro */
     max-width: 1100px;
@@ -313,7 +321,7 @@ nav a:hover {
     justify-items: center;
 }
 
-/* TARJETAS */
+/*TARJETAS */
 .tarjeta {
     background-color: #000; /* Dorado similar al ejemplo */
     border-radius: 35px;
@@ -406,28 +414,28 @@ nav a:hover {
         padding-right: 10px;
     }
 
-    /*MENU RESPONSIVE*/
+    /*-------------MENU RESPONSIVE-------------*/
 
     .nav .nav-menu {
         display: none; /* Ocultamos el menú por defecto en móvil */        
         /* Estilos del Menú Lateral (Off-canvas) */
         position: fixed;
         top: 0;
-        right: -100%; /* Inicialmente fuera de la pantalla */
+        left: -100%; /* Inicialmente fuera de la pantalla */
         width: 80%; /* Ancho del menú lateral */
         max-width: 300px;
         height: 100vh;
         background-color: #B82F25; 
         flex-direction: column;
         padding: 40px 0;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+        box-shadow: 2px 0 5px rgba(0,0,0,0.5);
         transition: right 0.3s ease-in-out; /* Transición para la animación de entrada/salida */
         z-index: 2000; /* Asegura que esté encima de todo */
     }
 
     /* Clase para mostrar el menú lateral */
     .nav-menu.open {
-        right: 0;
+        left: 0;
         display: flex; /* Lo volvemos a mostrar para que la transición funcione */
     }
     
@@ -490,15 +498,152 @@ nav a:hover {
         justify-content: center;
     }
 
-    /*BANNER*/
+    .titulo {
+        background-color: #B82F25;
+        width: 100%;
+    }
+
+    .titulo h1 {
+        font-size: 1.4rem;        
+    }
+
+    /*-------------BANNER-------------*/
     .texto1 {
         position: absolute; 
-        padding: 0 10px; 
+        padding: 15px 15px; 
     }
     
     .texto1 h2 {
-        font-size: 1.3rem; 
-        line-height: 1.2;
+        margin-top: 0;
+        font-size: 1rem; 
+        line-height: 1.8;
+    }
+
+    .texto1 h6 {
+        font-size: 0.6rem; /* Subtítulo más pequeño */
+    }
+
+    .contenedor-texto {  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;    
+    }
+
+    .btn-contacto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        padding: 8px 15px;
+        font-size: 0.5rem;
+        margin-top: 10px;
+    }
+
+    /*-------------SECCIÓN ARTÍCULOS INFORMATE-------------*/
+
+    .articulos {
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(4, 250px); 
+        gap: 1px; /* Espacio mínimo entre las tarjetas apiladas */
+    }
+    
+    .btn-informate {
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%, -0); 
+    }
+    
+    .articulos-card:nth-child(1) .btn-informate,
+    .articulos-card:nth-child(3) .btn-informate {
+        
+        left: auto ; 
+        right: 10% ; 
+        top: 75% ; 
+        transform: translate(0, 0);
+    }
+
+    .articulos-card:nth-child(2) .btn-informate,
+    .articulos-card:nth-child(4) .btn-informate {
+        left: 10%; 
+        right: auto; 
+        top: 75%;
+        transform: translate(0, 0);
+    }
+    
+    /*-------------SECCIÓN TARJETAS LO ÚLTIMO-------------*/
+    .lo-ultimo {
+        padding: 30px 15px;
+        margin: 20px 10px;
+        border-radius: 20px;
+        max-width: none; /* Permitir que ocupe todo el ancho disponible */
+    }
+
+    .lo-ultimo h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        text-align: center; /* Centrar el título de la sección */
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr; /* Una sola columna para apilar las tarjetas */
+        gap: 20px;
+    }
+
+    .tarjeta {
+        max-width: none; /* Ocupa el 100% del contenedor-tarjetas */
+        width: 95%; 
+        margin: 0 auto;
+        padding: 15px;
+    }
+    
+    .imagen img {
+        padding: 15px; 
+    }
+    
+    .contenido p {
+        font-size: 0.9rem; 
+    }
+
+    section.asesoria{
+        flex-direction: column;
+        width: 100%;
+        min-height: auto;
+        padding: 40px 20px;
+        overflow-x: hidden; 
+    }
+
+    .contenedor-imagen{
+        display: none;
+    }
+
+    .contenedor-texto{
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center; 
+        font-size: 0.7rem;
+        width: 100%;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .contenedor-texto p {
+        font-family: 'Gandhi Serif', serif;
+        font-size: 1.1rem; 
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 0 10px; 
+        max-width: 90%; 
+        text-align: center; 
+    }
+
+    .btn-contacto {
+        width: 250px; 
+        height: 45px;
+        margin: 10px auto 30px auto; 
+        font-size: 0.9rem;
     }
 }
 

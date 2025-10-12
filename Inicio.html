@@ -4,34 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAVAADVOCAR</title>
-    <link rel="icon" href="img/Captura de pantalla 2025-08-23 193009.png" type="image/png">
+    <title>SAVAADVOCAR-Inicio</title>
+    <link rel="icon" href="img/Logo Trans.png" type="image/png">
     <link rel="stylesheet" href="css/estilo1.css">
+    <script src="js/inicio.js" defer></script>
 </head>
 <body>
-    
     <header class="encabezado">               
         <div class="cabecera">  
         <h1>NIT: 901340177</h1>
+        
         <div class="separador"></div>
-        <i class="fa-brands fa-facebook fa-2x"></i>
-        <i class="fa-brands fa-linkedin fa-2x"></i>
-        <i class="fa-brands fa-whatsapp fa-2x"></i>
+        <div class="iconos">
+            <i class="fa-brands fa-facebook fa-2x"></i>
+            <i class="fa-brands fa-linkedin fa-2x"></i>
+            <i class="fa-brands fa-whatsapp fa-2x"></i>
+        </div>
         <div class="separador"></div>
-        </div>    
+
+        </div>        
     </header>  
-    <header class="nav">
+
+    <div class="nav">
         <a href="Inicio.html" class="logo">
             <img src="img/Logo.png" alt="Logo">
         </a>
-        <nav>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars fa-2x"></i>
+        </button>
+
+        <nav class="nav-menu">
+            <button class="close-menu" aria-label="Cerrar menú">
+                <i class="fas fa-times fa-2x"></i>
+            </button>
+            
             <a href="Inicio.html" class="nav-link">Inicio</a>
             <a href="Servicios.html" class="nav-link">Servicios</a>
-            <a href="" class="nav-link">Nosotros</a>
-            <a href="" class="nav-link">Noticias</a>
-            <a href="" class="nav-link">Contáctanos</a>
+            <a href="Nosotros.html" class="nav-link">Nosotros</a>
+            <a href="Noticias.html" class="nav-link">Noticias</a>
+            <a href="Contactanos.html" class="nav-link">Contáctanos</a>
         </nav>
-    </header>  
+    </div>
+
+    
+    
   
 </body>
 </html>

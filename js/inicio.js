@@ -1,5 +1,4 @@
- //ANIMACION DE SCROLL QUE SE PODRÍA VER SI QUITAR O NO 
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const closeMenu = document.querySelector('.close-menu');
     const navMenu = document.querySelector('.nav-menu');
@@ -51,4 +50,3 @@
         }
     });
 });
-

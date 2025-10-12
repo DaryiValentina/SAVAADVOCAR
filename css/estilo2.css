@@ -156,7 +156,7 @@ nav a:hover {
 }
 
 .texto1 h2 {    
-    font-size: 2.5rem;         /* tamaño grande de título */
+    font-size: 2rem;         /* tamaño grande de título */
     font-weight: bold;
     line-height: 1.2;    
 }
@@ -473,21 +473,21 @@ section.asesoria{
         /* Estilos del Menú Lateral (Off-canvas) */
         position: fixed;
         top: 0;
-        right: -100%; /* Inicialmente fuera de la pantalla */
+        left: -100%; /* Inicialmente fuera de la pantalla */
         width: 80%; /* Ancho del menú lateral */
         max-width: 300px;
         height: 100vh;
         background-color: #B82F25; 
         flex-direction: column;
         padding: 40px 0;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+        box-shadow: 2px 0 5px rgba(0,0,0,0.5);
         transition: right 0.3s ease-in-out; /* Transición para la animación de entrada/salida */
         z-index: 2000; /* Asegura que esté encima de todo */
     }
 
     /* Clase para mostrar el menú lateral */
     .nav-menu.open {
-        right: 0;
+        left: 0;
         display: flex; /* Lo volvemos a mostrar para que la transición funcione */
     }
     
@@ -557,7 +557,7 @@ section.asesoria{
     }
     
     .texto1 h2 {
-        font-size: 0.9rem; 
+        font-size: 1.1rem; 
         line-height: 1.2;
     }
 
@@ -686,7 +686,8 @@ section.asesoria{
         flex-direction: column;
         width: 100%;
         min-height: auto;
-        padding: 40px 20px;      
+        padding: 40px 20px;
+        overflow-x: hidden;      
     }
 
     .contenedor-imagen{
@@ -701,11 +702,16 @@ section.asesoria{
         font-size: 0.7rem;
         width: 100%;
         margin-right: 0;
+        margin-top: 0;
     }
 
     .contenedor-texto p {
         font-family: 'Gandhi Serif', serif;
         font-size: 1.3rem;    
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 0 10px;  
+        max-width: 100%;
     }
 
     .btn-contacto {
