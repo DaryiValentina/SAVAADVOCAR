@@ -116,6 +116,19 @@
     justify-content: space-between;
 }
 
+.icono-white {
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.icono-white:hover {
+  transform: translateY(3px); /* baja suavemente */
+}
+
+.icono-white:active {
+  transform: translateY(5px) scale(0.95); /* leve efecto de “presionado” */
+}
 
 /* Línea divisoria */
 .divider {
