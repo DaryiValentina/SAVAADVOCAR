@@ -24,17 +24,10 @@ Gandhi Sans=>Elementos publicitarios y textos no tan extensos*/
     box-sizing: border-box;
 }
 html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'PT Sans', sans-serif;
-  color: #fff;
-}
-body{
     margin: 0;
     padding: 0;
-}
-
-html{
+    font-family: 'PT Sans', sans-serif;
+    color: #fff;
     height: 3000px;
     scroll-behavior: smooth;
 }
@@ -484,84 +477,3 @@ nav a:hover {
 .full-grid-debug.show { display: grid; grid-template-columns: repeat(12,1fr); gap: 8px; padding: 10px; }
 .full-grid-debug.show .debug-col { background: rgba(255,2,2,0.12); border:1px dashed rgba(255,2,2,0.3); padding:6px 0; text-align:center; font-weight:700; }
 */
-
-        padding: 40px 0;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-        transition: right 0.3s ease-in-out; /* Transición para la animación de entrada/salida */
-        z-index: 2000; /* Asegura que esté encima de todo */
-    }
-
-    /* Clase para mostrar el menú lateral */
-    .nav-menu.open {
-        left: 0;
-        display: flex; /* Lo volvemos a mostrar para que la transición funcione */
-    }
-    
-    /* Estilos de los enlaces dentro del menú lateral */
-    .nav-menu .nav-link {
-        color: white; /* Color de texto blanco */
-        font-size: 1.5rem;
-        padding: 20px 40px;
-        width: 100%; /* Ocupa todo el ancho del menú */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separador sutil */
-    }
-    
-    .nav-menu .nav-link:last-child {
-        border-bottom: none;
-    }
-    
-    .close-menu {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-    }
-    
-    /* Botón de hamburguesa */
-    .menu-toggle {
-        display: block; /* Muestra el botón de hamburguesa */
-        background: none;
-        border: none;
-        color: #000000; 
-        cursor: pointer;
-        padding: 10px;
-    }
-    
-    body.menu-open {
-        overflow: hidden; /* Evita el scroll en el body cuando el menú está abierto */
-    }
-
-    .nav{
-        display: flex;
-        justify-content: space-between;
-        height: 70px;
-        align-items: center;
-        padding: 20px 40px;
-        background: #FFFF; 
-        position: sticky;
-        top: 0;
-        z-index: 1000; 
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .logo img {
-        height: 50px;
-    }
-    
-    .cabecera {
-        justify-content: center;
-    }
-
-    .titulo {
-        background-color: #B82F25;
-        width: 100%;
-    }
-
-    .titulo h1 {
-        font-size: 1.4rem;        
-    }
-}
