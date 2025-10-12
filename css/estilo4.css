@@ -13,7 +13,7 @@ body{
 }
 
 html{
-    height: 5000px;
+    height: auto;
     scroll-behavior: smooth;
 }
 
@@ -75,7 +75,7 @@ div.iconos i {
     justify-content: space-between;
     height: 70px;  
     align-items: center;
-    padding: 20px 140px;  
+    padding: 20px 40px;  
     background: #FFFF;
     position: sticky;
     top: 0;
@@ -92,7 +92,7 @@ div.iconos i {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
     
     /* Puedes reducir el padding si quieres que sea más compacta al hacer scroll */
-    padding: 15px 140px; 
+    padding: 15px 80px; 
     
     /* Agrega una transición para que el cambio sea suave */
     transition: all 0.3s ease-in-out;
@@ -134,7 +134,7 @@ nav a:hover {
     font-size: 1.7rem;
     margin: 0;
     font-weight: 600; /* Un poco menos negrita para que la sombra del texto destaque */
-    
+    font-family: 'Gandhi Sans', sans-serif;
     /* ---------------------------------------------------- */
     /* Sombra para el texto */
     text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.4); 
@@ -171,6 +171,7 @@ nav a:hover {
 }
 
 .texto1 h2 {    
+    font-family: 'Gandhi Sans', sans-serif;
     font-size: 2.5rem;         /* tamaño grande de título */
     font-weight: bold;
     line-height: 1.2;    
@@ -242,7 +243,7 @@ nav a:hover {
 }
 
 .articulos .articulos-card:nth-child(2) {
-    background-image: url('../img/pasaporte'); 
+    background-image: url('../img/pasaporte.jpg'); 
 }
 
 .articulos .articulos-card:nth-child(3) {
@@ -261,12 +262,12 @@ nav a:hover {
     color: #fff;
     font-family: 'Gandhi Sans', sans-serif;
     padding: 12px 35px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    border-radius: 5px; 
+    border-radius: 25px; 
     text-decoration: none;
     /*text-transform: uppercase; /* Mayúsculas*/
-    
+    font-family: 'Gandhi Sans', sans-serif; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
 
     /* Transición suave para el efecto hover */
@@ -290,55 +291,77 @@ nav a:hover {
 
 /*SECCIÓN TARJETAS LO ÚLTIMO*/
 .lo-ultimo {
+    background-color: #c2c2c2; /* Fondo beige claro */
     max-width: 1100px;
+    border-radius: 35px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 60px 50px;
 }
 
 .lo-ultimo h2 {
+    font-family: 'Gandhi Sans', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 30px;
+    text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.3); 
 }
 
 .contenedor-tarjetas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
-    grid-template-rows: 500px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
     justify-items: center;
 }
 
 /* TARJETAS */
 .tarjeta {
-    border-radius: 50px;
+    background-color: #000; /* Dorado similar al ejemplo */
+    border-radius: 35px;
     padding: 20px;
     width: 100%;
     max-width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     }
 
 /* IMAGEN */
 .imagen {
+    padding: 0;
     background-color: #b5312e; 
-    border-radius: 35px;
+    border-radius: 30px;
     overflow: hidden;
     position: relative;
+    height: 220px; /* 🔸 altura uniforme para todas */
+    width: 100%;
     margin-bottom: 20px;
+    margin: 0;
 }
 
 .imagen img {
     width: 100%;
+    height: 100%;
     display: block;
-    border-radius: 35px;
+    border-radius: 40px;
     padding: 30px;
+    object-fit: cover; /* 🔸 mantiene proporción sin deformar */
 }
 
+.contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
 
 /* TEXTO */
 .contenido p {
-    background-color: #000;
     font-family: 'Gandhi Serif', serif;
     color: #fff;
     font-size: 0.95rem;
@@ -350,10 +373,12 @@ nav a:hover {
     background: linear-gradient(180deg, #b5312e 0%, #d14825 100%);
     color: white;
     border: none;
+    font-family: 'Gandhi Sans', sans-serif;
     border-radius: 25px;
     padding: 10px 25px;
     margin-top: 15px;
     cursor: pointer;
+    font-size: 0.9rem;
     font-weight: bold;
     transition: transform 0.2s ease, background 0.3s ease;
 }
@@ -362,4 +387,119 @@ nav a:hover {
     transform: translateY(-3px);
     background: linear-gradient(180deg, #92231e 0%, #b5312e 100%);
 }
+
+@media (max-width: 700px) {
+
+    .cabecera {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .cabecera h1 {
+        font-size: 0.8rem;
+    }
+
+    .cabecera .iconos i {
+        font-size: 1.2rem;
+        padding-right: 10px;
+    }
+
+    /*MENU RESPONSIVE*/
+
+    .nav .nav-menu {
+        display: none; /* Ocultamos el menú por defecto en móvil */        
+        /* Estilos del Menú Lateral (Off-canvas) */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Inicialmente fuera de la pantalla */
+        width: 80%; /* Ancho del menú lateral */
+        max-width: 300px;
+        height: 100vh;
+        background-color: #B82F25; 
+        flex-direction: column;
+        padding: 40px 0;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+        transition: right 0.3s ease-in-out; /* Transición para la animación de entrada/salida */
+        z-index: 2000; /* Asegura que esté encima de todo */
+    }
+
+    /* Clase para mostrar el menú lateral */
+    .nav-menu.open {
+        right: 0;
+        display: flex; /* Lo volvemos a mostrar para que la transición funcione */
+    }
+    
+    /* Estilos de los enlaces dentro del menú lateral */
+    .nav-menu .nav-link {
+        color: white; /* Color de texto blanco */
+        font-size: 1.5rem;
+        padding: 20px 40px;
+        width: 100%; /* Ocupa todo el ancho del menú */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separador sutil */
+    }
+    
+    .nav-menu .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    
+    /* Botón de hamburguesa */
+    .menu-toggle {
+        display: block; /* Muestra el botón de hamburguesa */
+        background: none;
+        border: none;
+        color: #000000; 
+        cursor: pointer;
+        padding: 10px;
+    }
+    
+    body.menu-open {
+        overflow: hidden; /* Evita el scroll en el body cuando el menú está abierto */
+    }
+
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        align-items: center;
+        padding: 20px 40px;
+        background: #FFFF; 
+        position: sticky;
+        top: 0;
+        z-index: 1000; 
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+    
+    .cabecera {
+        justify-content: center;
+    }
+
+    /*BANNER*/
+    .texto1 {
+        position: absolute; 
+        padding: 0 10px; 
+    }
+    
+    .texto1 h2 {
+        font-size: 1.3rem; 
+        line-height: 1.2;
+    }
+}
+
 
