@@ -6,7 +6,8 @@
    =================================================================== */
 
 /* Tipografías */
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gandhi+Sans&family=Gandhi+Serif&display=swap');
+
 
 /* Reset mínimo y box-sizing recomendado */
 *,
@@ -23,7 +24,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Gandhi Sans', sans-serif;
   color: #fff;
 }
 header.encabezado {
@@ -197,14 +198,14 @@ nav a:hover {
   margin: 0 0 12px 0;
   line-height: 1.4;
   color: #fff;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
 
 /* Enlaces tipo email (blanco siempre, subrayado) */
 .footer .linkblanco {
   color: #fff;
   text-decoration: underline;
-  font-size: 0.9tooprem;
+  font-size: 0.9rem;
 }
 
 /* Redes: fila de iconos */
