@@ -14,12 +14,104 @@
 *::after {
   box-sizing: border-box;
 }
+/* Asegura que padding y border no afecten ancho total */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 html, body {
   margin: 0;
   padding: 0;
   font-family: 'PT Sans', sans-serif;
   color: #fff;
 }
+header.encabezado {
+    display: flex;            
+    justify-content: flex-end;
+    background: #B82F25;
+    min-height: 45px;   
+    scroll-behavior: smooth;
+}
+div.cabecera {
+    display: flex;
+    flex-direction: row;
+    align-items: center;        
+    padding: 10px;  
+    margin: 0;                
+}
+
+.logo {
+    display: flex;
+    margin-right: 20px; /* Add margin to the right for spacing */
+}
+
+.logo img {
+    height: 70px;
+}
+
+header div.cabecera h1 {
+    text-align: center;
+    font-size: 1rem;
+    color: #FFFF;
+    font-family: century;
+    padding-right: 20px;
+    margin: 0; 
+}
+
+div i {
+    padding-right: 15px; 
+    color: #FFFF;
+}
+
+.separador {
+    width: 1px;
+    height: 60%; 
+    background-color: #FFFF;
+    margin: 0 20px; 
+    
+}
+
+header.nav {
+    display: flex;            
+    justify-content: space-between;
+    height: 70px;  
+    align-items: center;
+    padding: 20px 40px;  
+    background: #FFFF;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+nav a {
+    display: inline-block;                 
+    font-weight: 600;
+    padding-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease; /* <– incluye transform */
+    will-change: transform;
+}
+
+nav a:hover {
+    color: #D19733;
+    transform: translateY(3px); /* puedes combinar más efectos */
+}
+
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+    }
+
+    header.nav {
+        padding: 10px 20px; 
+    }
+}
+
 
 /* ===========================
    Layout general de la página
@@ -216,7 +308,7 @@ html, body {
 
 /* texto CTA */
 .servicios-contacto .cta-text {
-  margin: 0;
+  margin-top: 10px;
   color: #fff;
   line-height: 1.4;
   font-size: 0.95rem;
@@ -312,96 +404,3 @@ html, body {
 .full-grid-debug.show { display: grid; grid-template-columns: repeat(12,1fr); gap: 8px; padding: 10px; }
 .full-grid-debug.show .debug-col { background: rgba(255,2,2,0.12); border:1px dashed rgba(255,2,2,0.3); padding:6px 0; text-align:center; font-weight:700; }
 */
-/* Asegura que padding y border no afecten ancho total */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header.encabezado {
-    display: flex;            
-    justify-content: flex-end;
-    background: #B82F25;
-    min-height: 45px;   
-    scroll-behavior: smooth;
-}
-
-div.cabecera {
-    display: flex;
-    flex-direction: row;
-    align-items: center;        
-    padding: 10px;  
-    margin: 0;                
-}
-
-.logo {
-    display: flex;
-    margin-right: 20px; /* Add margin to the right for spacing */
-}
-
-.logo img {
-    height: 70px;
-}
-
-header div.cabecera h1 {
-    text-align: center;
-    font-size: 1rem;
-    color: #FFFF;
-    font-family: century;
-    padding-right: 20px;
-    margin: 0; 
-}
-
-div i {
-    padding-right: 15px; 
-    color: #FFFF;
-}
-
-.separador {
-    width: 1px;
-    height: 60%; 
-    background-color: #FFFF;
-    margin: 0 20px; 
-    
-}
-
-header.nav {
-    display: flex;            
-    justify-content: space-between;
-    height: 70px;  
-    align-items: center;
-    padding: 20px 40px;  
-    background: #FFFF;
-    scroll-behavior: smooth;
-}
-
-a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #000000;
-}
-
-nav a {
-    display: inline-block;                 
-    font-weight: 600;
-    padding-right: 15px;
-    transition: color 0.3s ease, transform 0.3s ease; /* <– incluye transform */
-    will-change: transform;
-}
-
-nav a:hover {
-    color: #D19733;
-    transform: translateY(3px); /* puedes combinar más efectos */
-}
-
-
-@media (max-width: 700px) {
-    header {
-        flex-direction: column;
-    }
-
-    header.nav {
-        padding: 10px 20px; 
-    }
-}
