@@ -6,7 +6,8 @@
    =================================================================== */
 
 /* Tipografías */
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gandhi+Sans&family=Gandhi+Serif&display=swap');
+
 
 /* Reset mínimo y box-sizing recomendado */
 *,
@@ -24,12 +25,10 @@ Gandhi Sans=>Elementos publicitarios y textos no tan extensos*/
     box-sizing: border-box;
 }
 html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'PT Sans', sans-serif;
-    color: #fff;
-    height: 3000px;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: 'Gandhi Sans', sans-serif;
+  color: #fff;
 }
 
 /*-------------HEADER-------------*/
@@ -197,8 +196,8 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(10, 1fr); /* usadas por .col-1/.col-2 internos */
   gap: 20px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 20px;
+  padding-bottom: 2px;
 }
 
 /* Inner-grid (bloque central) */
@@ -230,12 +229,14 @@ nav a:hover {
   margin: 0 0 12px 0;
   line-height: 1.4;
   color: #fff;
+  font-size: 1.05rem;
 }
 
 /* Enlaces tipo email (blanco siempre, subrayado) */
 .footer .linkblanco {
   color: #fff;
   text-decoration: underline;
+  font-size: 0.9rem;
 }
 
 /* Redes: fila de iconos */
@@ -243,7 +244,7 @@ nav a:hover {
   display: flex;
   gap: 12px;
   align-items: center;
-  margin: 10px 0 14px 0;
+  margin: 20px 0 20px 0;
 }
 
 /* icon links (visually white + focus style) */
@@ -294,6 +295,7 @@ nav a:hover {
   padding-left: 30px; /* espacio para el círculo pseudo */
   display: inline-block;
   transition: color 0.2s ease;
+  font-size: 1.1rem;
 }
 
 /* circulito pseudo-elemento a la izquierda */
@@ -341,10 +343,10 @@ nav a:hover {
 
 /* texto CTA */
 .servicios-contacto .cta-text {
-  margin-top: 10px;
+  margin-top: 20px;
   color: #fff;
   line-height: 1.4;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
 }
 
 /* botón WhatsApp dentro del bloque de contacto:
@@ -382,7 +384,6 @@ nav a:hover {
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
-  padding-bottom: 18px;
 }
 .footer .footer-logo img { height: 60px; display:block; }
 
@@ -522,18 +523,19 @@ nav a:hover {
         padding: 20px;
     }
 
-    .footer .inner-grid {
-        grid-column: 1 / -1;
-        grid-template-columns: 1fr;
-        justify-content: start;
-        align-self: start;
-        gap: 14px;
-    }
-    .footer .redes {
-        justify-content: space-between;
-    }
-    .col-2 { grid-column: 1 / -1; }
-    .col-1 { grid-column: 1 / -1; }
+  .footer .inner-grid {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    justify-content: start;
+    align-self: start;
+    gap: 14px;
+  }
+  .footer p { margin-top: 20px; }
+  .footer .redes {
+    justify-content: space-between;
+  }
+  .col-2 { grid-column: 1 / -1; }
+  .col-1 { grid-column: 1 / -1; }
 
     .servicios-contacto { width: 100%; max-width: 100%; }
     .footer .logo-img { max-width: 100%; margin-bottom: 10px; }
