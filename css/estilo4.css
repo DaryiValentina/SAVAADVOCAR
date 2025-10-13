@@ -266,7 +266,7 @@ nav a:hover {
     position: absolute;
     top: 80%;
     transform: translate(-50%,0);
-    background-color: #B82F25; 
+    background-color: #CB4F24; 
     color: #fff;
     font-family: 'Gandhi Sans', sans-serif;
     padding: 12px 35px;
@@ -325,9 +325,9 @@ nav a:hover {
 .tarjeta {
     background-color: #000; /* Dorado similar al ejemplo */
     border-radius: 35px;
-    padding: 20px;
+    padding: 0;
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -342,13 +342,16 @@ nav a:hover {
 .imagen {
     padding: 0;
     background-color: #b5312e; 
-    border-radius: 30px;
+    border-radius: 35px;
     overflow: hidden;
     position: relative;
     height: 220px; /* 🔸 altura uniforme para todas */
     width: 100%;
-    margin-bottom: 20px;
     margin: 0;
+
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .imagen img {
@@ -366,6 +369,7 @@ nav a:hover {
     flex-direction: column;
     justify-content: space-between;
     padding: 15px 20px;
+    width: 100%;
 }
 
 /* TEXTO */
@@ -378,7 +382,7 @@ nav a:hover {
 
 /* BOTÓN */
 .btn {
-    background: linear-gradient(180deg, #b5312e 0%, #d14825 100%);
+    background-color: #CB4F24;
     color: white;
     border: none;
     font-family: 'Gandhi Sans', sans-serif;
@@ -393,7 +397,7 @@ nav a:hover {
 
 .btn:hover {
     transform: translateY(-3px);
-    background: linear-gradient(180deg, #92231e 0%, #b5312e 100%);
+    background-color: #D19733;
 }
 
 @media (max-width: 700px) {
@@ -595,7 +599,14 @@ nav a:hover {
         max-width: none; /* Ocupa el 100% del contenedor-tarjetas */
         width: 95%; 
         margin: 0 auto;
-        padding: 15px;
+        padding: 0;
+        border-radius: 20px;
+    }
+
+    .imagen{
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
     
     .imagen img {
