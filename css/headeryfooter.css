@@ -1,132 +1,181 @@
-/* ===================================================================
-   estilo1.css — Header (no modificado) + Footer (organizado)
-   =================================================================== */
-
-/* Tipografías */
 @import url('https://fonts.googleapis.com/css2?family=Gandhi+Sans&family=Gandhi+Serif&display=swap');
-/* Gandhi Serif => Textos informativos
-   Gandhi Sans  => Elementos publicitarios y textos no tan extensos */
 
-/* Reset y box-sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
+/*Gandhi Serif=>Textos informativos
+Gandhi Sans=>Elementos publicitarios y textos no tan extensos*/
+/* Asegura que padding y border no afecten ancho total */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html,
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Gandhi Sans', sans-serif;
-  color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-/* ------------- HEADER / NAV (NO TOCAR) ------------- */
+html {
+    height: auto;
+    scroll-behavior: smooth;
+}
+
+/*-------------HEADER-------------*/
 header.encabezado {
-  display: flex;
-  flex-direction: column;
-  background: #B82F25;
-  min-height: 45px;
-  overflow: visible;
+    display: flex;
+    flex-direction: column;
+    background: #B82F25;
+    min-height: 45px;
+    /*position: sticky; */
+    overflow: visible;
 }
 
 div.cabecera {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px;
-  margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+    /*border-right: solid; */
 }
 
 .logo {
-  display: flex;
-  margin-right: 20px;
+    display: flex;
+    margin-right: 20px;
+    /* Add margin to the right for spacing */
 }
 
 .logo img {
-  height: 60px;
+    height: 60px;
 }
 
-header div.cabecera h1 {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #FFFF;
-  font-family: 'Gandhi Sans', sans-serif;
-  margin: 0;
+.nit {
+    color: #fff;
+    font-size: 0.9rem;
+    font-family: 'Gandhi Sans', sans-serif;
+    margin: 0;
 }
 
 div.iconos i {
-  padding-right: 15px;
-  color: #FFFF;
+    padding-right: 15px;
+    color: #FFFF;
 }
 
 .separador {
-  height: 25px;
-  margin: 0 20px;
-  border-right: 1.5px solid #FFFF;
+    height: 25px;
+    /*background-color: #FFFF;*/
+    margin: 0 20px;
+    border-right: 1.5px solid #FFFF;
 }
 
+/* Definir un espaciado diferente en la segunda línea */
 .separador:last-child {
-  margin: 0 40px 0 4px;
+    margin: 0 40px 0 4px;
 }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
-  height: 70px;
-  align-items: center;
-  padding: 20px 40px;
-  background: #FFFF;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    padding: 20px 40px;
+    background: #FFFF;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    /*PARA ANIMACIÓN DE SCROLL*/
 }
 
+/*-------------PARA ANIMACION DE SCROLL-------------*/
 .nav.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 15px 80px;
-  transition: all 0.3s ease-in-out;
+    /* Fondo más sólido o con transparencia para que no se mezcle */
+    background-color: rgba(255, 255, 255, 0.95);
+
+    /* Agrega una sombra para que "salte" sobre el contenido */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    /* Puedes reducir el padding si quieres que sea más compacta al hacer scroll */
+    padding: 15px 80px;
+
+    /* Agrega una transición para que el cambio sea suave */
+    transition: all 0.3s ease-in-out;
 }
 
 a {
-  text-decoration: none;
-  font-size: 1.1rem;
-  color: #000000;
-  font-family: 'Gandhi Sans', sans-serif;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #000000;
+    font-family: 'Gandhi Sans', sans-serif;
 }
 
 .menu-toggle,
 .close-menu,
 .mobile-menu-title {
-  display: none;
+    display: none;
 }
 
 .nav .nav-menu {
-  display: flex;
+    display: flex;
+    /* Asegura que los enlaces sigan en línea */
 }
 
-nav a {
-  display: inline-block;
-  font-weight: 600;
-  padding-right: 30px;
-  transition: color 0.3s ease, transform 0.3s ease;
-  will-change: transform;
+.nav-menu ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    /* elimina viñetas */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    display: inline-block;
+    font-weight: 600;
+    padding-right: 30px;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Gandhi Sans', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
-  color: #D19733;
-  transform: translateY(2px);
+    color: #D19733;
+    transform: translateY(2px);
+    /* puedes combinar más efectos */
 }
+
+/* -------- BOTÓN FLOTANTE WHATSAPP -------- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    background-color: #20b857;
+}
+
 
 /* ------------- FIN HEADER / NAV ------------- */
 
