@@ -4,176 +4,176 @@
 Gandhi Sans=>Elementos publicitarios y textos no tan extensos*/
 /* Asegura que padding y border no afecten ancho total */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    height: auto;
-    scroll-behavior: smooth;
+  height: auto;
+  scroll-behavior: smooth;
 }
 
 /*-------------HEADER-------------*/
 header.encabezado {
-    display: flex;
-    flex-direction: column;
-    background: #B82F25;
-    min-height: 45px;
-    /*position: sticky; */
-    overflow: visible;
+  display: flex;
+  flex-direction: column;
+  background: #B82F25;
+  min-height: 45px;
+  /*position: sticky; */
+  overflow: visible;
 }
 
 div.cabecera {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 10px;
-    margin: 0;
-    /*border-right: solid; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+  /*border-right: solid; */
 }
 
 .logo {
-    display: flex;
-    margin-right: 20px;
-    /* Add margin to the right for spacing */
+  display: flex;
+  margin-right: 20px;
+  /* Add margin to the right for spacing */
 }
 
 .logo img {
-    height: 60px;
+  height: 60px;
 }
 
 .nit {
-    color: #fff;
-    font-size: 0.9rem;
-    font-family: 'Gandhi Sans', sans-serif;
-    margin: 0;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: 'Gandhi Sans', sans-serif;
+  margin: 0;
 }
 
 div.iconos i {
-    padding-right: 15px;
-    color: #FFFF;
+  padding-right: 15px;
+  color: #FFFF;
 }
 
 .separador {
-    height: 25px;
-    /*background-color: #FFFF;*/
-    margin: 0 20px;
-    border-right: 1.5px solid #FFFF;
+  height: 25px;
+  /*background-color: #FFFF;*/
+  margin: 0 20px;
+  border-right: 1.5px solid #FFFF;
 }
 
 /* Definir un espaciado diferente en la segunda línea */
 .separador:last-child {
-    margin: 0 40px 0 4px;
+  margin: 0 40px 0 4px;
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    height: 70px;
-    align-items: center;
-    padding: 20px 40px;
-    background: #FFFF;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: all 0.3s ease-in-out;
-    /*PARA ANIMACIÓN DE SCROLL*/
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+  padding: 20px 40px;
+  background: #FFFF;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  /*PARA ANIMACIÓN DE SCROLL*/
 }
 
 /*-------------PARA ANIMACION DE SCROLL-------------*/
 .nav.scrolled {
-    /* Fondo más sólido o con transparencia para que no se mezcle */
-    background-color: rgba(255, 255, 255, 0.95);
+  /* Fondo más sólido o con transparencia para que no se mezcle */
+  background-color: rgba(255, 255, 255, 0.95);
 
-    /* Agrega una sombra para que "salte" sobre el contenido */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* Agrega una sombra para que "salte" sobre el contenido */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
-    /* Puedes reducir el padding si quieres que sea más compacta al hacer scroll */
-    padding: 15px 80px;
+  /* Puedes reducir el padding si quieres que sea más compacta al hacer scroll */
+  padding: 15px 80px;
 
-    /* Agrega una transición para que el cambio sea suave */
-    transition: all 0.3s ease-in-out;
+  /* Agrega una transición para que el cambio sea suave */
+  transition: all 0.3s ease-in-out;
 }
 
 a {
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: #000000;
-    font-family: 'Gandhi Sans', sans-serif;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #000000;
+  font-family: 'Gandhi Sans', sans-serif;
 }
 
 .menu-toggle,
 .close-menu,
 .mobile-menu-title {
-    display: none;
+  display: none;
 }
 
 .nav .nav-menu {
-    display: flex;
-    /* Asegura que los enlaces sigan en línea */
+  display: flex;
+  /* Asegura que los enlaces sigan en línea */
 }
 
 .nav-menu ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    /* elimina viñetas */
-    margin: 0;
-    padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  /* elimina viñetas */
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu li {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu li a {
-    display: inline-block;
-    font-weight: 600;
-    padding-right: 30px;
-    color: #000000;
-    text-decoration: none;
-    font-family: 'Gandhi Sans', sans-serif;
-    transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  font-weight: 600;
+  padding-right: 30px;
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Gandhi Sans', sans-serif;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
-    color: #D19733;
-    transform: translateY(2px);
-    /* puedes combinar más efectos */
+  color: #D19733;
+  transform: translateY(2px);
+  /* puedes combinar más efectos */
 }
 
 /* -------- BOTÓN FLOTANTE WHATSAPP -------- */
 .whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25D366;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-    background-color: #20b857;
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  background-color: #20b857;
 }
 
 
@@ -465,8 +465,6 @@ nav a:hover {
    =========================== */
 @media (max-width: 700px) {
 
-  /* --- HEADER / NAV (mantengo lo tuyo: no tocar) --- */
-  /* Mantengo tus reglas originales para menu/branding/responsive */
   .cabecera {
     flex-direction: column;
     align-items: center;
@@ -483,13 +481,18 @@ nav a:hover {
     padding-right: 10px;
   }
 
-  /* Off-canvas menu behavior (mantengo tu configuración) */
+  /*-------------MENU RESPONSIVE-------------*/
+
   .nav .nav-menu {
     display: none;
+    /* Ocultamos el menú por defecto en móvil */
+    /* Estilos del Menú Lateral (Off-canvas) */
     position: fixed;
     top: 0;
     left: -100%;
+    /* Inicialmente fuera de la pantalla */
     width: 80%;
+    /* Ancho del menú lateral */
     max-width: 300px;
     height: 100vh;
     background-color: #B82F25;
@@ -497,20 +500,37 @@ nav a:hover {
     padding: 40px 0;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     transition: right 0.3s ease-in-out;
+    /* Transición para la animación de entrada/salida */
     z-index: 2000;
+    /* Asegura que esté encima de todo */
   }
 
+  .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  /* Clase para mostrar el menú lateral */
   .nav-menu.open {
     left: 0;
     display: flex;
+    /* Lo volvemos a mostrar para que la transición funcione */
   }
 
+  /* Estilos de los enlaces dentro del menú lateral */
   .nav-menu .nav-link {
     color: white;
+    /* Color de texto blanco */
     font-size: 1.5rem;
     padding: 20px 40px;
     width: 100%;
+    /* Ocupa todo el ancho del menú */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Separador sutil */
   }
 
   .nav-menu .nav-link:last-child {
@@ -528,8 +548,10 @@ nav a:hover {
     cursor: pointer;
   }
 
+  /* Botón de hamburguesa */
   .menu-toggle {
     display: block;
+    /* Muestra el botón de hamburguesa */
     background: none;
     border: none;
     color: #000000;
@@ -539,6 +561,7 @@ nav a:hover {
 
   body.menu-open {
     overflow: hidden;
+    /* Evita el scroll en el body cuando el menú está abierto */
   }
 
   .nav {
@@ -560,6 +583,15 @@ nav a:hover {
 
   .cabecera {
     justify-content: center;
+  }
+
+  /* -------- BOTÓN FLOTANTE WHATSAPP -------- */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+    bottom: 15px;
+    right: 15px;
   }
 
   /* --- FOOTER responsive: apilar y centrar contenido --- */
