@@ -1,46 +1,373 @@
 .banner-section {
-    position: relative;      /* para poder posicionar el texto encima */
-    width: 100%;
-    height: auto;           /* altura fija para el banner */
-    overflow: hidden;
+  position: relative;
+  /* para poder posicionar el texto encima */
+  width: 100%;
+  height: auto;
+  /* altura fija para el banner */
+  overflow: hidden;
 }
 
 .banner-section img {
-    width: 100%;
-    height: 100%;
-    /*object-fit: cover;       /* que la imagen cubra todo el ancho/alto */
-    /*display: block;*/
+  width: 100%;
+  height: 100%;
+  /*object-fit: cover;       /* que la imagen cubra todo el ancho/alto */
+  /*display: block;*/
 }
 
 .texto1 {
-    position: absolute;
-    top: 50%;
-    left: 23%;
-    right: 10%;
-    transform: translate(200%, -250%); /* centra horizontal y vertical */
-    text-align: left;
-    color: #000000;
-    padding: 0 20px;         
-    max-width: 20%; 
-    font-family: 'Gandhi Sans', sans-serif;           
+  position: absolute;
+  top: 50%;
+  left: 23%;
+  right: 10%;
+  transform: translate(200%, -250%);
+  /* centra horizontal y vertical */
+  text-align: left;
+  color: #000000;
+  padding: 0 20px;
+  max-width: 20%;
+  font-family: 'Gandhi Sans', sans-serif;
 }
 
-.texto1 h2 {    
-    font-size: 3rem;         /* tamaño grande de título */
-    font-weight: bold;
-    line-height: 1.2;    
+.texto1 h2 {
+  font-size: 3rem;
+  /* tamaño grande de título */
+  font-weight: bold;
+  line-height: 1.2;
 }
 
+/* Sección general */
+.seccion-general {
+  padding: 40px 40px;
+  width: 100%;
+  color: black;
+}
+
+.seccion-general h3 {
+  font-size: 1.8rem;
+  color: #B82F25;
+  text-decoration: none;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.img-wrapper {
+  grid-column: 8 / 13;
+  grid-row: 2;
+
+  width: 100%;
+  height: 240px;
+
+  border-radius: 140px;
+  overflow: hidden;
+  /* esto hace que los bordes funcionen */
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Título arriba centrado correctamente sin afectar filas */
+.menu-titulo {
+  grid-column: 2 / -1;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+/* Iconos en columna izquierda */
+.porque-iconos {
+  grid-column: 1;
+  /* Columna izquierda */
+  grid-row: 2;
+  /* Misma fila del texto */
+}
+
+.porque-iconos ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.porque-iconos li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.icono-lista {
+  font-size: 2.4rem;
+  color: #B82F25;
+}
+
+/* Texto en columna derecha */
+.menu-links {
+  grid-column: 2 / span 6;
+  /* Texto a la derecha de iconos */
+  grid-row: 2;
+}
+
+.texto-iconos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.texto-iconos li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+
+  font-size: 1.15rem;
+  color: black;
+  text-decoration: none;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.porque-iconos li,
+.texto-iconos li {
+  height: 50px;
+}
+
+/* BOTÓN */
+.btn {
+  display: inline-flex;
+  /* permite centrar el texto */
+  justify-content: center;
+  /* centra horizontalmente */
+  align-items: center;
+  /* centra verticalmente */
+  background: linear-gradient(180deg, #b5312e 0%, #d14825 100%);
+  color: white;
+  border: none;
+  font-family: 'Gandhi Sans', sans-serif;
+  border-radius: 25px;
+  padding: 20px 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(180deg, #92231e 0%, #b5312e 100%);
+}
+
+.seccion-general .btn {
+  grid-column: 2/ span 3;
+}
+
+/* --- SECCIÓN TARJETAS EN GRID --- */
+
+/*TARJETAS */
+.tarjeta {
+  background-color: #b5312e;
+  border-radius: 35px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* IMAGEN */
+.imagen {
+  padding: 0;
+  background-color: #000;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+  /* 🔸 altura uniforme para todas */
+  width: 100%;
+  margin-bottom: 20px;
+  margin: 0;
+}
+
+.imagen img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 0;
+  object-fit: cover;
+  /* 🔸 mantiene proporción sin deformar */
+}
+
+.contenido {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+/* TEXTO */
+.tarjeta p {
+  margin: 30px 0 10px;
+  font-family: 'Gandhi Sans', sans-serif;
+  color: #fff;
+  font-size: 1.45rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.contenido p {
+  font-family: 'Gandhi Serif', serif;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.tarjeta .btn {
+  background: linear-gradient(#b5312e);
+  text-decoration: underline;
+}
+
+.seccion-tarjetas {
+  background-color: #000;
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Cada tarjeta ocupa 4 columnas del grid */
+.seccion-tarjetas .tarjeta {
+  grid-column: span 4;
+}
+
+
+/* CONTENEDOR PRINCIPAL */
+.asesoria-video-section {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  padding: 40px;
+  color: #fff;
+}
+
+/* Video */
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Overlay oscuro */
+.asesoria-video-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+}
+
+.asesoria-layout {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;    /* centra verticalmente */
+  height: 100%;
+  width: 100%;
+  gap: 60px;
+  z-index: 1;
+}
+.asesoria-col {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: fit-content;
+  height: auto;
+}
+
+/* Alineaciones */
+.asesoria-col.izquierda {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.asesoria-col.derecha {
+  align-items: flex-end;
+  text-align: right;
+}
+.asesoria-img-text {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.asesoria-img {
+  width: 80px;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+}
+
+.asesoria-descripcion {
+  max-width: 320px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+/* FORMULARIO (columna derecha) */
+.asesoria-form {
+  background: rgba(0,0,0,0.55);
+  padding: 40px 35px;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;    /* distribuye del top al bottom */
+  align-items: stretch;
+  gap: 18px;
+
+  width: 320px;      /* ancho ideal */
+  min-height: 420px; /* << CLAVE: hace que se vea "alto y bonito" */
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+.porque-iconos .icono-white {
+   font-size: 1.5rem;
+}
+
+
+h4 {
+  display: flex;
+  justify-content: center;
+  font-size: 3.6rem;
+  padding: 25px 0;
+  background: black;
+}
 
 @media (max-width: 700px) {
-    /*BANNER*/
-    .texto1 {
-        position: absolute; 
-        padding: 0 10px; 
-    }
-    
-    .texto1 h2 {
-        font-size: 1.1rem; 
-        line-height: 1.2;
-    }
+
+  /*BANNER*/
+  .texto1 {
+    position: absolute;
+    padding: 0 10px;
+  }
+
+  .texto1 h2 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
 }
