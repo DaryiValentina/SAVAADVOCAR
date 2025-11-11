@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,59 +10,120 @@
     <link rel="stylesheet" href="css/estilo2.css">
     <script src="js/servicios.js" defer></script>
 </head>
-<body>
-    <header class="encabezado">               
-        <div class="cabecera">  
-        <h1>NIT: 901340177</h1>
-        
-        <div class="separador"></div>
-        <div class="iconos">
-            <i class="fa-brands fa-facebook fa-2x"></i>
-            <i class="fa-brands fa-linkedin fa-2x"></i>
-            <i class="fa-brands fa-whatsapp fa-2x"></i>
-        </div>
-        <div class="separador"></div>
 
-        </div>        
-    </header>  
+<body>
+    <header class="encabezado">
+        <div class="cabecera">
+            <p class="nit">NIT: 901340177</p>
+
+            <div class="separador"></div>
+            <div class="iconos">
+                <i class="fa-brands fa-facebook fa-2x"></i>
+                <i class="fa-brands fa-linkedin fa-2x"></i>
+                <i class="fa-brands fa-whatsapp fa-2x"></i>
+            </div>
+            <div class="separador"></div>
+
+        </div>
+    </header>
 
     <div class="nav">
-            <a href="Inicio.html" class="logo">
-                <img src="img/Logo.png" alt="Logo">
-            </a>
-            <button class="menu-toggle" aria-label="Abrir menú">
-                <i class="fas fa-bars fa-2x"></i>
-            </button>
+        <a href="Inicio.html" class="logo">
+            <img src="img/Logo.png" alt="Logo">
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars fa-2x"></i>
+        </button>
 
-            <nav class="nav-menu">
-                <button class="close-menu" aria-label="Cerrar menú">
-                    <i class="fas fa-times fa-2x"></i>
-                </button>
-                <ul>
+        <nav class="nav-menu">
+            <button class="close-menu" aria-label="Cerrar menú">
+                <i class="fas fa-times fa-2x"></i>
+            </button>
+            <ul>
                 <li><a href="Inicio.html" class="nav-link">Inicio</a></li>
-                <li><a href="Servicios.html" class="nav-link">Servicios</a></li>            
+                <li><a href="Servicios.html" class="nav-link">Servicios</a></li>
                 <li><a href="Nosotros.html" class="nav-link">Nosotros</a></li>
                 <li><a href="Noticias.html" class="nav-link">Noticias</a></li>
                 <li><a href="Contactanos.html" class="nav-link">Contáctanos</a></li>
             </ul>
-            </nav>
-    </div>
-  
-    <div class="banner-section">
-        <img class="banner" src="img/carruservimg1.jpg" alt="">
-            <div class="texto1">
-                <h2>Soluciones jurídicas personalizadas en Colombia y España</h2>
-            </div>
+        </nav>
     </div>
 
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/573001112233" class="whatsapp-float" target="_blank" aria-label="Chat por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div class="banner-section">
+        <img class="banner" src="img/carruservimg1.jpg" alt="">
+        <div class="texto1">
+            <h2>Soluciones jurídicas personalizadas en Colombia y España</h2>
+        </div>
+    </div>
+    <!--  
     <section class="servicios">
         <div class="btn">
             <button data-servicio="cartera">Recuperación de cartera</button>
             <button data-servicio="visado">Visado y pasaporte para España</button>
-            <button data-servicio="otros">Otros servicios</button>             
+            <button data-servicio="otros">Otros servicios</button>
+        </div>
+    </section>-->
+
+    <section class="contenido-dinamico">
+        <div class="container">
+            <div class="card">
+                <img src="img/sev-cartera.jpg" alt="Imagen ilustrativa" class="contenido-img" />
+                <div class="contenido-texto">
+                    <h3 id="contenido-titulo">Recupera la liquidez de tu Comunidad sin desgastes legales</h3>
+                    <p id="contenido-descripcion">Recupera la liquidez de tu Comunidad con procesos claros, ágiles y
+                        respetuosos. En SAVA España reducimos la morosidad y te damos tranquilidad en cada gestión</p>
+                    <ul class="contenido-lista">
+                        <li><i class="fa-solid fa-hand-holding-dollar"></i> <span id="item1">Cobro administrativo y
+                                prejudírico</span></li>
+                        <li><i class="fa-solid fa-file-contract"></i> <span id="item2">Preparación documental para vía
+                                judicial</span></li>
+                        <li><i class="fa-solid fa-user-tie"></i> <span id="item3">Asesorías permanentes puntuales</span></li>
+                    </ul>
+                    <button class="boton-accion">Inicia tu proceso</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/sev-cartera.jpg" alt="Imagen ilustrativa" class="contenido-img" />
+                <div class="contenido-texto">
+                    <h3 id="contenido-titulo">Acompañamos tu trámite de extranjería en España y desde Colombia</h3>
+                    <p id="contenido-descripcion">Te guiamos en cada paso de tu proceso de extranjería, desde Colombia o España. Con asesoría 
+                        experta y cercana, tus trámites de visado y residencia serán más seguros y ordenados.</p>
+                    <ul class="contenido-lista">
+                        <li><i class="fa-solid fa-people-group"></i> <span id="item1">Arraigo sociolaboral</span></li>
+                        <li><i class="fa-solid fa-graduation-cap"></i> <span id="item2">Arraigo socioformativo</span></li>
+                        <li><i class="fa-solid fa-passport"></i> <span id="item3">Estancia por estudios</span></li>
+                        <li><i class="fa-solid fa-plane-departure"></i> <span id="item4">Visados por estudios desde Colombia</span></li>
+                    </ul>
+                    <button class="boton-accion">Inicia tu proceso</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/sev-cartera.jpg" alt="Imagen ilustrativa" class="contenido-img" />
+                <div class="contenido-texto">
+                    <h3 id="contenido-titulo">Recupera la liquidez de tu Comunidad sin desgastes legales</h3>
+                    <p id="contenido-descripcion">Recupera la liquidez de tu Comunidad con procesos claros, ágiles y
+                        respetuosos. En SAVA España reducimos la morosidad y te damos tranquilidad en cada gestión</p>
+                    <ul class="contenido-lista">
+                        <li><i class="fa-solid fa-hand-holding-dollar"></i> <span id="item1">Cobro administrativo y
+                                prejudírico.</span></li>
+                        <li><i class="fa-solid fa-file-contract"></i> <span id="item2">Preparación documental para vía
+                                judicial.</span></li>
+                        <li><i class="fa-solid fa-user-tie"></i> <span id="item3">Asesorías permanentes puntuales</span></li>                    </ul>
+                    <button class="boton-accion">Inicia tu proceso</button>
+                </div>
+            </div>
         </div>
     </section>
 
+
+    <!--
     <section id="contenido-dinamico">
         <div class="contenido-caja">
         <img src="img/imagen-ejemplo.jpg" alt="Imagen ilustrativa" class="contenido-img"/>
@@ -78,7 +140,7 @@
         </div>
         </div>
     </section>
-
+    -->
 
     <br><br>
     <section class="empieza">
@@ -104,7 +166,7 @@
         <div class="paso blanco">
             <i class="fa-solid fa-bars-progress"></i>
             <span>Iniciamos la gestión</span>
-    </div>
+        </div>
     </section>
 
     <section class="asesoria">
@@ -119,6 +181,7 @@
             <a href="#contacto" class="btn-contacto">Contáctanos hoy mismo</a>
         </div>
     </section>
-    
+
 </body>
+
 </html>

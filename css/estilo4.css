@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gandhi+Sans&family=Gandhi+Serif&display=swap');
+
 /*Gandhi Serif=>Textos informativos
 Gandhi Sans=>Elementos publicitarios y textos no tan extensos*/
 /* Asegura que padding y border no afecten ancho total */
@@ -7,23 +8,24 @@ Gandhi Sans=>Elementos publicitarios y textos no tan extensos*/
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
 }
 
-html{
+html {
     height: auto;
     scroll-behavior: smooth;
 }
 
 /*-------------HEADER-------------*/
 header.encabezado {
-    display: flex;     
+    display: flex;
     flex-direction: column;
     background: #B82F25;
-    min-height: 45px;   
-    /*position: sticky; */ 
+    min-height: 45px;
+    /*position: sticky; */
     overflow: visible;
 }
 
@@ -31,71 +33,71 @@ div.cabecera {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: center;        
-    padding: 10px;  
-    margin: 0;   
-    /*border-right: solid; */           
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+    /*border-right: solid; */
 }
 
 .logo {
     display: flex;
-    margin-right: 20px; /* Add margin to the right for spacing */
+    margin-right: 20px;
+    /* Add margin to the right for spacing */
 }
 
 .logo img {
     height: 60px;
 }
 
-header div.cabecera h1 {
-    text-align: center;
+.nit {
+    color: #fff;
     font-size: 0.9rem;
-    color: #FFFF;
     font-family: 'Gandhi Sans', sans-serif;
-    /*padding-right: 20px;*/
-    margin: 0; 
+    margin: 0;
 }
 
 div.iconos i {
-    padding-right: 15px; 
+    padding-right: 15px;
     color: #FFFF;
 }
 
 .separador {
-    height: 25px; 
+    height: 25px;
     /*background-color: #FFFF;*/
-    margin: 0 20px;     
+    margin: 0 20px;
     border-right: 1.5px solid #FFFF;
 }
 
 /* Definir un espaciado diferente en la segunda línea */
 .separador:last-child {
-	margin: 0 40px 0 4px;		
+    margin: 0 40px 0 4px;
 }
 
 .nav {
-    display: flex;            
+    display: flex;
     justify-content: space-between;
-    height: 70px;  
+    height: 70px;
     align-items: center;
-    padding: 20px 40px;  
+    padding: 20px 40px;
     background: #FFFF;
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: all 0.3s ease-in-out; /*PARA ANIMACIÓN DE SCROLL*/
+    transition: all 0.3s ease-in-out;
+    /*PARA ANIMACIÓN DE SCROLL*/
 }
 
 /*-------------PARA ANIMACION DE SCROLL-------------*/
 .nav.scrolled {
     /* Fondo más sólido o con transparencia para que no se mezcle */
-    background-color: rgba(255, 255, 255, 0.95); 
-    
+    background-color: rgba(255, 255, 255, 0.95);
+
     /* Agrega una sombra para que "salte" sobre el contenido */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
-    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
     /* Puedes reducir el padding si quieres que sea más compacta al hacer scroll */
-    padding: 15px 80px; 
-    
+    padding: 15px 80px;
+
     /* Agrega una transición para que el cambio sea suave */
     transition: all 0.3s ease-in-out;
 }
@@ -103,29 +105,49 @@ div.iconos i {
 a {
     text-decoration: none;
     font-size: 1.1rem;
-    color: #000000;   
+    color: #000000;
     font-family: 'Gandhi Sans', sans-serif;
 }
 
-.menu-toggle, .close-menu, .mobile-menu-title {
+.menu-toggle,
+.close-menu,
+.mobile-menu-title {
     display: none;
 }
 
 .nav .nav-menu {
-    display: flex; /* Asegura que los enlaces sigan en línea */
+    display: flex;
+    /* Asegura que los enlaces sigan en línea */
 }
 
-nav a {
-    display: inline-block;                 
+.nav-menu ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    /* elimina viñetas */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    display: inline-block;
     font-weight: 600;
     padding-right: 30px;
-    transition: color 0.3s ease, transform 0.3s ease; /* <– incluye transform */
-    will-change: transform;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Gandhi Sans', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
     color: #D19733;
-    transform: translateY(2px); /* puedes combinar más efectos */
+    transform: translateY(2px);
+    /* puedes combinar más efectos */
 }
 
 /* -------- BOTÓN FLOTANTE WHATSAPP -------- */
@@ -155,9 +177,9 @@ nav a:hover {
     width: 100%;
     text-align: center;
     padding: 15px 0;
-    font-family: 'Gandhi Sans', sans-serif;    
+    font-family: 'Gandhi Sans', sans-serif;
     /* Sombra para que el "rectángulo" parezca flotar un poco */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     /* ---------------------------------------------------- */
 }
 
@@ -165,18 +187,21 @@ nav a:hover {
     color: #fff;
     font-size: 1.8rem;
     margin: 0;
-    font-weight: 600; /* Un poco menos negrita para que la sombra del texto destaque */
+    font-weight: 600;
+    /* Un poco menos negrita para que la sombra del texto destaque */
     font-family: 'Gandhi Sans', sans-serif;
     /* ---------------------------------------------------- */
     /* Sombra para el texto */
-    text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.4); 
+    text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.4);
     /* ---------------------------------------------------- */
 }
 
 .banner-section {
-    position: relative;      /* para poder posicionar el texto encima */
+    position: relative;
+    /* para poder posicionar el texto encima */
     width: 100%;
-    height: auto;           /* altura fija para el banner */
+    height: auto;
+    /* altura fija para el banner */
     overflow: hidden;
 }
 
@@ -193,40 +218,42 @@ nav a:hover {
     left: 50%;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 30px;
-    transform: translate(-50%, -50%); /* centra horizontal y vertical */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    transform: translate(-50%, -50%);
+    /* centra horizontal y vertical */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     font-family: 'Gandhi Sans', sans-serif;
     text-align: center;
     color: #fff;
-    padding: 20px 20px;         
+    padding: 20px 20px;
     /*max-width: 40%;*/
 }
 
-.texto1 h2 {    
+.texto1 h2 {
     font-family: 'Gandhi Sans', sans-serif;
-    font-size: 1.7rem;         /* tamaño grande de título */
+    font-size: 1.7rem;
+    /* tamaño grande de título */
     font-weight: bold;
-    line-height: 1.2;    
+    line-height: 1.2;
 }
 
-.texto1 h6{
+.texto1 h6 {
     font-size: 2rem;
     font-weight: bold;
-    line-height: 1.2; 
+    line-height: 1.2;
 }
 
 .contenedor-texto {
-    flex: 1;  
+    flex: 1;
     display: flex;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 1;    
+    z-index: 1;
 }
 
-.btn-contacto {    
+.btn-contacto {
     font-family: 'Gandhi Sans', sans-serif;
     background-color: #CB4F24;
     color: #000;
@@ -246,19 +273,21 @@ nav a:hover {
 
 /*-------------SECCIÓN ARTÍCULOS INFORMATE-------------*/
 
-.articulos{
+.articulos {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 400px 400px;
-    gap: 0; /*Espacio entre celdas*/
+    gap: 0;
+    /*Espacio entre celdas*/
     width: 100%;
-    margin-bottom: 0; 
+    margin-bottom: 0;
     padding-bottom: 0;
 }
 
-.articulos-card{
+.articulos-card {
     position: relative;
-    background-size: cover; /*Para que la imagen de fondo cubra el espacio completo*/
+    background-size: cover;
+    /*Para que la imagen de fondo cubra el espacio completo*/
     background-position: center;
     background-repeat: no-repeat;
     /*transition: transform 0.3s ease-in-out;
@@ -267,59 +296,60 @@ nav a:hover {
 
 
 .articulos .articulos-card:nth-child(1) {
-    background-image: url('../img/deuda.jpg'); 
+    background-image: url('../img/deuda.jpg');
 }
 
 .articulos .articulos-card:nth-child(2) {
-    background-image: url('../img/pasaporte.jpg'); 
+    background-image: url('../img/pasaporte.jpg');
 }
 
 .articulos .articulos-card:nth-child(3) {
-    background-image: url('../img/golden-visa.jpg'); 
+    background-image: url('../img/golden-visa.jpg');
 }
 
 .articulos .articulos-card:nth-child(4) {
-    background-image: url('../img/solicitud-visado.jpg'); 
+    background-image: url('../img/solicitud-visado.jpg');
 }
 
-.btn-informate{
+.btn-informate {
     position: absolute;
     top: 80%;
-    transform: translate(-50%,0);
-    background-color: #CB4F24; 
+    transform: translate(-50%, 0);
+    background-color: #CB4F24;
     color: #fff;
     font-family: 'Gandhi Sans', sans-serif;
     padding: 12px 35px;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 25px; 
+    border-radius: 25px;
     text-decoration: none;
     /*text-transform: uppercase; /* Mayúsculas*/
-    font-family: 'Gandhi Sans', sans-serif; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+    font-family: 'Gandhi Sans', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 
     /* Transición suave para el efecto hover */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-informate:hover {
-    background-color: #D19733; 
-    transform: translate(10, 10) scale(1.05); 
+    background-color: #D19733;
+    transform: translate(10, 10) scale(1.05);
 }
 
 .articulos-card:nth-child(1) .btn-informate,
 .articulos-card:nth-child(3) .btn-informate {
-    right: -30px; 
+    right: -30px;
 }
 
 .articulos-card:nth-child(2) .btn-informate,
 .articulos-card:nth-child(4) .btn-informate {
-    left: 120px; 
+    left: 120px;
 }
 
 /*-------------SECCIÓN TARJETAS LO ÚLTIMO-------------*/
 .lo-ultimo {
-    background-color: #c2c2c2; /* Fondo beige claro */
+    background-color: #c2c2c2;
+    /* Fondo beige claro */
     max-width: 1100px;
     border-radius: 35px;
     margin: 0 auto;
@@ -331,7 +361,7 @@ nav a:hover {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 30px;
-    text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 2px 7px 4px rgba(0, 0, 0, 0.3);
 }
 
 .contenedor-tarjetas {
@@ -343,7 +373,8 @@ nav a:hover {
 
 /*TARJETAS */
 .tarjeta {
-    background-color: #000; /* Dorado similar al ejemplo */
+    background-color: #000;
+    /* Dorado similar al ejemplo */
     border-radius: 35px;
     padding: 0;
     width: 100%;
@@ -356,16 +387,17 @@ nav a:hover {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    }
+}
 
 /* IMAGEN */
 .imagen {
     padding: 0;
-    background-color: #b5312e; 
+    background-color: #b5312e;
     border-radius: 35px;
     overflow: hidden;
     position: relative;
-    height: 220px; /* 🔸 altura uniforme para todas */
+    height: 220px;
+    /* 🔸 altura uniforme para todas */
     width: 100%;
     margin: 0;
 
@@ -380,7 +412,8 @@ nav a:hover {
     display: block;
     border-radius: 40px;
     padding: 30px;
-    object-fit: cover; /* 🔸 mantiene proporción sin deformar */
+    object-fit: cover;
+    /* 🔸 mantiene proporción sin deformar */
 }
 
 .contenido {
@@ -441,41 +474,59 @@ nav a:hover {
     /*-------------MENU RESPONSIVE-------------*/
 
     .nav .nav-menu {
-        display: none; /* Ocultamos el menú por defecto en móvil */        
+        display: none;
+        /* Ocultamos el menú por defecto en móvil */
         /* Estilos del Menú Lateral (Off-canvas) */
         position: fixed;
         top: 0;
-        left: -100%; /* Inicialmente fuera de la pantalla */
-        width: 80%; /* Ancho del menú lateral */
+        left: -100%;
+        /* Inicialmente fuera de la pantalla */
+        width: 80%;
+        /* Ancho del menú lateral */
         max-width: 300px;
         height: 100vh;
-        background-color: #B82F25; 
+        background-color: #B82F25;
         flex-direction: column;
         padding: 40px 0;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-        transition: right 0.3s ease-in-out; /* Transición para la animación de entrada/salida */
-        z-index: 2000; /* Asegura que esté encima de todo */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s ease-in-out;
+        /* Transición para la animación de entrada/salida */
+        z-index: 2000;
+        /* Asegura que esté encima de todo */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        width: 100%;
     }
 
     /* Clase para mostrar el menú lateral */
     .nav-menu.open {
         left: 0;
-        display: flex; /* Lo volvemos a mostrar para que la transición funcione */
+        display: flex;
+        /* Lo volvemos a mostrar para que la transición funcione */
     }
-    
+
     /* Estilos de los enlaces dentro del menú lateral */
     .nav-menu .nav-link {
-        color: white; /* Color de texto blanco */
+        color: white;
+        /* Color de texto blanco */
         font-size: 1.5rem;
         padding: 20px 40px;
-        width: 100%; /* Ocupa todo el ancho del menú */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separador sutil */
+        width: 100%;
+        /* Ocupa todo el ancho del menú */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        /* Separador sutil */
     }
-    
+
     .nav-menu .nav-link:last-child {
         border-bottom: none;
     }
-    
+
     .close-menu {
         display: block;
         position: absolute;
@@ -486,38 +537,40 @@ nav a:hover {
         color: white;
         cursor: pointer;
     }
-    
+
     /* Botón de hamburguesa */
     .menu-toggle {
-        display: block; /* Muestra el botón de hamburguesa */
+        display: block;
+        /* Muestra el botón de hamburguesa */
         background: none;
         border: none;
-        color: #000000; 
+        color: #000000;
         cursor: pointer;
         padding: 10px;
     }
-    
+
     body.menu-open {
-        overflow: hidden; /* Evita el scroll en el body cuando el menú está abierto */
+        overflow: hidden;
+        /* Evita el scroll en el body cuando el menú está abierto */
     }
 
-    .nav{
+    .nav {
         display: flex;
         justify-content: space-between;
         height: 70px;
         align-items: center;
         padding: 20px 40px;
-        background: #FFFF; 
+        background: #FFFF;
         position: sticky;
         top: 0;
-        z-index: 1000; 
+        z-index: 1000;
         transition: all 0.3s ease-in-out;
     }
-    
+
     .logo img {
         height: 50px;
     }
-    
+
     .cabecera {
         justify-content: center;
     }
@@ -528,7 +581,7 @@ nav a:hover {
     }
 
     .titulo h1 {
-        font-size: 1.4rem;        
+        font-size: 1.4rem;
     }
 
     /* -------- BOTÓN FLOTANTE WHATSAPP -------- */
@@ -542,29 +595,30 @@ nav a:hover {
 
     /*-------------BANNER-------------*/
     .texto1 {
-        position: absolute; 
-        padding: 15px 15px; 
+        position: absolute;
+        padding: 15px 15px;
     }
-    
+
     .texto1 h2 {
         margin-top: 0;
-        font-size: 1rem; 
+        font-size: 1rem;
         line-height: 1.8;
     }
 
     .texto1 h6 {
-        font-size: 0.6rem; /* Subtítulo más pequeño */
+        font-size: 0.6rem;
+        /* Subtítulo más pequeño */
     }
 
-    .contenedor-texto {  
+    .contenedor-texto {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100%;    
+        height: 100%;
     }
 
-    .btn-contacto{
+    .btn-contacto {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -577,92 +631,97 @@ nav a:hover {
     /*-------------SECCIÓN ARTÍCULOS INFORMATE-------------*/
 
     .articulos {
-        grid-template-columns: 1fr; 
-        grid-template-rows: repeat(4, 250px); 
-        gap: 1px; /* Espacio mínimo entre las tarjetas apiladas */
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 250px);
+        gap: 1px;
+        /* Espacio mínimo entre las tarjetas apiladas */
     }
-    
+
     .btn-informate {
-        top: 50%; 
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, -0); 
+        transform: translate(-50%, -0);
     }
-    
+
     .articulos-card:nth-child(1) .btn-informate,
     .articulos-card:nth-child(3) .btn-informate {
-        
-        left: auto ; 
-        right: 10% ; 
-        top: 75% ; 
+
+        left: auto;
+        right: 10%;
+        top: 75%;
         transform: translate(0, 0);
     }
 
     .articulos-card:nth-child(2) .btn-informate,
     .articulos-card:nth-child(4) .btn-informate {
-        left: 10%; 
-        right: auto; 
+        left: 10%;
+        right: auto;
         top: 75%;
         transform: translate(0, 0);
     }
-    
+
     /*-------------SECCIÓN TARJETAS LO ÚLTIMO-------------*/
     .lo-ultimo {
         padding: 30px 15px;
         margin: 20px 10px;
         border-radius: 20px;
-        max-width: none; /* Permitir que ocupe todo el ancho disponible */
+        max-width: none;
+        /* Permitir que ocupe todo el ancho disponible */
     }
 
     .lo-ultimo h2 {
         font-size: 1.5rem;
         margin-bottom: 20px;
-        text-align: center; /* Centrar el título de la sección */
+        text-align: center;
+        /* Centrar el título de la sección */
     }
 
     .contenedor-tarjetas {
-        grid-template-columns: 1fr; /* Una sola columna para apilar las tarjetas */
+        grid-template-columns: 1fr;
+        /* Una sola columna para apilar las tarjetas */
         gap: 20px;
     }
 
     .tarjeta {
-        max-width: none; /* Ocupa el 100% del contenedor-tarjetas */
-        width: 95%; 
+        max-width: none;
+        /* Ocupa el 100% del contenedor-tarjetas */
+        width: 95%;
         margin: 0 auto;
         padding: 0;
         border-radius: 20px;
     }
 
-    .imagen{
+    .imagen {
         border-radius: 20px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
-    
+
     .imagen img {
-        padding: 15px; 
-    }
-    
-    .contenido p {
-        font-size: 0.9rem; 
+        padding: 15px;
     }
 
-    section.asesoria{
+    .contenido p {
+        font-size: 0.9rem;
+    }
+
+    section.asesoria {
         flex-direction: column;
         width: 100%;
         min-height: auto;
         padding: 40px 20px;
-        overflow-x: hidden; 
+        overflow-x: hidden;
     }
 
-    .contenedor-imagen{
+    .contenedor-imagen {
         display: none;
     }
 
-    .contenedor-texto{
+    .contenedor-texto {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         justify-content: center;
-        align-items: center; 
+        align-items: center;
         font-size: 0.7rem;
         width: 100%;
         margin-right: 0;
@@ -671,20 +730,18 @@ nav a:hover {
 
     .contenedor-texto p {
         font-family: 'Gandhi Serif', serif;
-        font-size: 1.1rem; 
+        font-size: 1.1rem;
         margin-top: 20px;
         margin-bottom: 20px;
-        padding: 0 10px; 
-        max-width: 90%; 
-        text-align: center; 
+        padding: 0 10px;
+        max-width: 90%;
+        text-align: center;
     }
 
     .btn-contacto {
-        width: 250px; 
+        width: 250px;
         height: 45px;
-        margin: 10px auto 30px auto; 
+        margin: 10px auto 30px auto;
         font-size: 0.9rem;
     }
 }
-
-
