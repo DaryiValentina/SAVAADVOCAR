@@ -1,5 +1,5 @@
 const dataServicios = {
-      cartera: {
+    cartera: {
         titulo: "Recupera la liquidez de tu Comunidad sin desgastes legales",
         descripcion: "Recupera la liquidez de tu Comunidad con procesos claros, ágiles y respetuosos. En SAVA España reducimos la morosidad y te damos tranquilidad en cada gestión.",
         img: "img/sev-cartera.jpg",  // Ruta de imagen
@@ -12,9 +12,9 @@ const dataServicios = {
             "fa-solid fa-hand-holding-dollar",
             "fa-solid fa-file-contract",
             "fa-solid fa-user-tie"
-        ]   
-      },
-      visado: {
+        ]
+    },
+    visado: {
         titulo: "Acompañamos tu trámite de extranjería en España y desde Colombia",
         descripcion: "Te guiamos en cada paso de tu proceso de extranjería, desde Colombia o España. Con asesoría experta y cercana, tus trámites de visado y residencia serán más seguros y ordenados.",
         img: "img/sev-visado.jpg",
@@ -29,9 +29,9 @@ const dataServicios = {
             "fa-solid fa-graduation-cap",
             "fa-solid fa-passport",
             "fa-solid fa-plane-departure"
-        ]  
-      },
-      otros: {
+        ]
+    },
+    otros: {
         titulo: "Más soluciones legales para ti",
         descripcion: "Además de extranjería y cartera, en SAVA España te asesoramos en reclamaciones bancarias, gestión inmobiliaria y compra directa de inmuebles. Soluciones legales adaptadas a ti.",
         img: "img/sev-otros.jpg",
@@ -44,12 +44,26 @@ const dataServicios = {
             "fa-solid fa-credit-card",
             "fa-solid fa-building",
             "fa-solid fa-house"
-        ]  
-      }
-    };
+        ]
+    }
+};
 
-    document.querySelectorAll('.btn button').forEach(btn => {
-      btn.addEventListener('click', () => {
+/* const cards = document.querySelectorAll('.card');
+let activeIndex = 0;
+
+setInterval(() => {
+    cards[activeIndex].classList.remove('hover');
+    activeIndex = (activeIndex + 1) % cards.length;
+    cards[activeIndex].classList.add('hover');
+}, 4000);
+
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => card.classList.add('hover'));
+    card.addEventListener('mouseleave', () => card.classList.remove('hover'));
+}); */
+
+document.querySelectorAll('.btn button').forEach(btn => {
+    btn.addEventListener('click', () => {
         const servicio = btn.getAttribute('data-servicio');
         const data = dataServicios[servicio];
 
@@ -58,21 +72,21 @@ const dataServicios = {
         document.querySelector(".contenido-img").src = data.img;
 
         for (let i = 0; i < 4; i++) {
-        const itemElement = document.getElementById(`item${i + 1}`);
-        const liElement = itemElement?.parentElement;
-        const iconElement = liElement?.querySelector('i');
+            const itemElement = document.getElementById(`item${i + 1}`);
+            const liElement = itemElement?.parentElement;
+            const iconElement = liElement?.querySelector('i');
 
-        if (data.items[i]) {
-            itemElement.innerText = data.items[i];
-            liElement.style.display = "flex";
+            if (data.items[i]) {
+                itemElement.innerText = data.items[i];
+                liElement.style.display = "flex";
 
-            if (iconElement && data.icons && data.icons[i]) {
-            iconElement.className = data.icons[i]; // Actualiza el ícono
+                if (iconElement && data.icons && data.icons[i]) {
+                    iconElement.className = data.icons[i]; // Actualiza el ícono
+                }
+            } else {
+                itemElement.innerText = "";
+                liElement.style.display = "none";
             }
-        } else {
-            itemElement.innerText = "";
-            liElement.style.display = "none";
-        }
         }
 
 
@@ -80,14 +94,14 @@ const dataServicios = {
 
         // Scroll automático
         window.scrollTo({
-          top: document.getElementById("contenido-dinamico").offsetTop - 50,
-          behavior: 'smooth'
+            top: document.getElementById("contenido-dinamico").offsetTop - 50,
+            behavior: 'smooth'
         });
-      });
     });
-    
-    //ANIMACION DE SCROLL QUE SE PODRÍA VER SI QUITAR O NO 
-    document.addEventListener('DOMContentLoaded', () => {
+});
+
+//ANIMACION DE SCROLL QUE SE PODRÍA VER SI QUITAR O NO 
+document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav');
     const scrollThreshold = 50; // Cantidad de píxeles para aplicar el cambio
 
@@ -111,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenu = document.querySelector('.close-menu');
     const navMenu = document.querySelector('.nav-menu');
     const body = document.body;
-    
+
     // Crear el overlay dinámicamente
     const overlay = document.createElement('div');
     overlay.classList.add('overlay');
@@ -139,14 +153,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeMenu) {
         closeMenu.addEventListener('click', closeMenuHandler);
     }
-    
+
     // Cerrar menú al hacer clic en un enlace o en el overlay
     navMenu.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', closeMenuHandler);
     });
 
     overlay.addEventListener('click', closeMenuHandler);
-    
+
     // Mantener tu funcionalidad de scroll para la barra de navegación (si existe)
     // Ejemplo:
     const headerNav = document.querySelector('.nav');

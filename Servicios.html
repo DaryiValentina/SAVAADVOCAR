@@ -13,83 +13,135 @@
 </head>
 
 <body>
-  <header class="encabezado">
-    <div class="cabecera">
-      <h1>NIT: 901340177</h1>
+    <header class="encabezado">
+        <div class="cabecera">
+            <p class="nit">NIT: 901340177</p>
 
-      <div class="separador"></div>
-      <div class="iconos">
-        <a href="https://www.facebook.com/advocarsava" target="_blank" rel="noopener noreferrer"
-          aria-label="Visitar nuestro Facebook" class="icono-white">
-          <i class="fa-brands fa-facebook fa-2x"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/sava-advocar-313090196" target="_blank" rel="noopener noreferrer"
-          aria-label="Visitar nuestro perfil de LinkedIn" class="icono-white">
-          <i class="fa-brands fa-linkedin fa-2x"></i>
-        </a>
-        <a href="https://wa.me/34654520009" target="_blank" rel="noopener noreferrer"
-          aria-label="Contactar por WhatsApp" class="icono-white">
-          <i class="fa-brands fa-whatsapp fa-2x"></i>
-        </a>
-      </div>
-      <div class="separador"></div>
+            <div class="separador"></div>
+            <div class="iconos">
+                <i class="fa-brands fa-facebook fa-2x"></i>
+                <i class="fa-brands fa-linkedin fa-2x"></i>
+                <i class="fa-brands fa-whatsapp fa-2x"></i>
+            </div>
+            <div class="separador"></div>
 
+        </div>
+    </header>
+
+    <div class="nav">
+        <a href="Inicio.html" class="logo">
+            <img src="img/Logo.png" alt="Logo">
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars fa-2x"></i>
+        </button>
+
+        <nav class="nav-menu">
+            <button class="close-menu" aria-label="Cerrar menú">
+                <i class="fas fa-times fa-2x"></i>
+            </button>
+            <ul>
+                <li><a href="Inicio.html" class="nav-link">Inicio</a></li>
+                <li><a href="Servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="Nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="Noticias.html" class="nav-link">Noticias</a></li>
+                <li><a href="Contactanos.html" class="nav-link">Contáctanos</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
 
-  <div class="nav">
-    <a href="index.html" class="logo">
-      <img src="img/Logo.png" alt="Logo">
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/573001112233" class="whatsapp-float" target="_blank" aria-label="Chat por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú">
-      <i class="fas fa-bars fa-2x"></i>
-    </button>
 
-    <nav class="nav-menu">
-      <button class="close-menu" aria-label="Cerrar menú">
-        <i class="fas fa-times fa-2x"></i>
-      </button>
-
-      <a href="index.html" class="nav-link">Inicio</a>
-      <a href="Servicios.html" class="nav-link">Servicios</a>
-      <a href="Nosotros.html" class="nav-link">Nosotros</a>
-      <a href="Noticias.html" class="nav-link">Noticias</a>
-      <a href="Contactanos.html" class="nav-link">Contáctanos</a>
-    </nav>
-  </div>
-
-  <div class="banner-section">
-    <img class="banner" src="img/carruservimg1.jpg" alt="">
-    <div class="texto1">
-      <h2>Soluciones jurídicas personalizadas en Colombia y España</h2>
+    <div class="banner-section">
+        <img class="banner" src="img/carruservimg1.jpg" alt="">
+        <div class="texto1">
+            <h2>Soluciones jurídicas personalizadas en Colombia y España</h2>
+        </div>
     </div>
-  </div>
+    <!--  
+    <section class="servicios">
+        <div class="btn">
+            <button data-servicio="cartera">Recuperación de cartera</button>
+            <button data-servicio="visado">Visado y pasaporte para España</button>
+            <button data-servicio="otros">Otros servicios</button>
+        </div>
+    </section>-->
 
-  <section class="servicios">
-    <div class="btn">
-      <button data-servicio="cartera">Recuperación de cartera</button>
-      <button data-servicio="visado">Visado y pasaporte para España</button>
-      <button data-servicio="otros">Otros servicios</button>
-    </div>
-  </section>
+    <section class="contenido-dinamico">
+        <div class="container">
+            <div class="card">
+                <img src="img/sev-cartera.jpg" alt="Imagen ilustrativa" class="contenido-img" />
+                <div class="contenido-texto">
+                    <h3 id="contenido-titulo">Recupera la liquidez de tu Comunidad sin desgastes legales</h3>
+                    <p id="contenido-descripcion">Recupera la liquidez de tu Comunidad con procesos claros, ágiles y
+                        respetuosos. En SAVA España reducimos la morosidad y te damos tranquilidad en cada gestión</p>
+                    <ul class="contenido-lista">
+                        <li><i class="fa-solid fa-hand-holding-dollar"></i> <span id="item1">Cobro administrativo y
+                                prejudírico</span></li>
+                        <li><i class="fa-solid fa-file-contract"></i> <span id="item2">Preparación documental para vía
+                                judicial</span></li>
+                        <li><i class="fa-solid fa-user-tie"></i> <span id="item3">Asesorías permanentes puntuales</span></li>
+                    </ul>
+                    <button class="boton-accion">Inicia tu proceso</button>
+                </div>
+            </div>
 
-  <section id="contenido-dinamico">
-    <div class="contenido-caja">
-      <img src="img/imagen-ejemplo.jpg" alt="Imagen ilustrativa" class="contenido-img" />
-      <div class="contenido-texto">
-        <h3 id="contenido-titulo">Título</h3>
-        <p id="contenido-descripcion">Descripción general del servicio seleccionado.</p>
-        <ul class="contenido-lista">
-          <li><i class="fa-solid fa-box-archive"></i> <span id="item1">Item 1</span></li>
-          <li><i class="fa-solid fa-file-lines"></i> <span id="item2">Item 2</span></li>
-          <li><i class="fa-solid fa-comments"></i> <span id="item3">Item 3</span></li>
-          <li><i class="fa-solid fa-comments"></i> <span id="item4">Item 4</span></li>
-        </ul>
-        <button class="boton-accion">Inicia tu proceso</button>
-      </div>
-    </div>
-  </section>
+            <div class="card">
+                <img src="img/sev-cartera.jpg" alt="Imagen ilustrativa" class="contenido-img" />
+                <div class="contenido-texto">
+                    <h3 id="contenido-titulo">Acompañamos tu trámite de extranjería en España y desde Colombia</h3>
+                    <p id="contenido-descripcion">Te guiamos en cada paso de tu proceso de extranjería, desde Colombia o España. Con asesoría 
+                        experta y cercana, tus trámites de visado y residencia serán más seguros y ordenados.</p>
+                    <ul class="contenido-lista">
+                        <li><i class="fa-solid fa-people-group"></i> <span id="item1">Arraigo sociolaboral</span></li>
+                        <li><i class="fa-solid fa-graduation-cap"></i> <span id="item2">Arraigo socioformativo</span></li>
+                        <li><i class="fa-solid fa-passport"></i> <span id="item3">Estancia por estudios</span></li>
+                        <li><i class="fa-solid fa-plane-departure"></i> <span id="item4">Visados por estudios desde Colombia</span></li>
+                    </ul>
+                    <button class="boton-accion">Inicia tu proceso</button>
+                </div>
+            </div>
 
+            <div class="card">
+                <img src="img/sev-cartera.jpg" alt="Imagen ilustrativa" class="contenido-img" />
+                <div class="contenido-texto">
+                    <h3 id="contenido-titulo">Recupera la liquidez de tu Comunidad sin desgastes legales</h3>
+                    <p id="contenido-descripcion">Recupera la liquidez de tu Comunidad con procesos claros, ágiles y
+                        respetuosos. En SAVA España reducimos la morosidad y te damos tranquilidad en cada gestión</p>
+                    <ul class="contenido-lista">
+                        <li><i class="fa-solid fa-hand-holding-dollar"></i> <span id="item1">Cobro administrativo y
+                                prejudírico.</span></li>
+                        <li><i class="fa-solid fa-file-contract"></i> <span id="item2">Preparación documental para vía
+                                judicial.</span></li>
+                        <li><i class="fa-solid fa-user-tie"></i> <span id="item3">Asesorías permanentes puntuales</span></li>                    </ul>
+                    <button class="boton-accion">Inicia tu proceso</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+    <section id="contenido-dinamico">
+        <div class="contenido-caja">
+        <img src="img/imagen-ejemplo.jpg" alt="Imagen ilustrativa" class="contenido-img"/>
+        <div class="contenido-texto">
+            <h3 id="contenido-titulo">Título</h3>
+            <p id="contenido-descripcion">Descripción general del servicio seleccionado.</p>
+            <ul class="contenido-lista">
+            <li><i class="fa-solid fa-box-archive"></i> <span id="item1">Item 1</span></li>
+            <li><i class="fa-solid fa-file-lines"></i> <span id="item2">Item 2</span></li>
+            <li><i class="fa-solid fa-comments"></i> <span id="item3">Item 3</span></li>
+            <li><i class="fa-solid fa-comments"></i> <span id="item4">Item 4</span></li>
+            </ul>
+            <button class="boton-accion">Inicia tu proceso</button>
+        </div>
+        </div>
+    </section>
+    -->
 
   <br><br>
   <section class="empieza">
@@ -112,97 +164,25 @@
       <span>Diseñamos la estrategia</span>
     </div>
 
-    <div class="paso blanco">
-      <i class="fa-solid fa-bars-progress"></i>
-      <span>Iniciamos la gestión</span>
-    </div>
-  </section>
-
-  <section class="asesoria">
-    <div class="contenedor-imagen">
-      <img src="img/persona2.png" alt="Asesor SAVA España">
-    </div>
-    <div class="contenedor-texto">
-      <p>
-        En <strong>SAVA España</strong> encuentras un aliado legal confiable y cercano.
-        Escríbenos y recibe una primera asesoría clara y sin compromiso.
-      </p>
-      <a href="#contacto" class="btn-contacto">Contáctanos hoy mismo</a>
-    </div>
-  </section>
-
-  <footer class="footer" role="contentinfo">
-    <div class="parent">
-      <div class="div3">
-        <img src="img/Logo Transparente.png" alt="Logo de SAVA Advocar" class="logo-img" />
-      </div>
-
-      <div class="div4">
-        <p>
-          Firma de abogados enfocada en la recuperación de cartera, procesos comerciales y disciplinarios.
-        </p>
-
-        <div class="redes" aria-label="Redes sociales">
-          <a href="https://wa.me/34654520009" target="_blank" rel="noopener noreferrer"
-            aria-label="Contactar por WhatsApp" class="icono-white">
-            <i class="fa-brands fa-whatsapp fa-2x"></i>
-          </a>
-          <a href="https://www.facebook.com/advocarsava" target="_blank" rel="noopener noreferrer"
-            aria-label="Visitar nuestro Facebook" class="icono-white">
-            <i class="fa-brands fa-facebook fa-2x"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/sava-advocar-313090196" target="_blank" rel="noopener noreferrer"
-            aria-label="Visitar nuestro perfil de LinkedIn" class="icono-white">
-            <i class="fa-brands fa-linkedin fa-2x"></i>
-          </a>
+        <div class="paso blanco">
+            <i class="fa-solid fa-bars-progress"></i>
+            <span>Iniciamos la gestión</span>
         </div>
+    </section>
 
-        <p><strong>Email:</strong></p>
-        <a class="linkblanco" href="mailto:procesosjuridicos@sava.com.co"
-          aria-label="Enviar correo a procesosjuridicos@sava.com.co">
-          procesosjuridicos@sava.com.co
-        </a>
-      </div>
-
-      <div class="div5">
-        <h3>Inicio</h3>
-        <ul class="servicios-lista" aria-label="Enlaces de navegación principales">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Contáctanos</a></li>
-        </ul>
-      </div>
-
-      <div class="div6">
-        <h3>Servicios Destacados</h3>
-        <ul class="servicios-lista" aria-label="Servicios destacados">
-          <li><a href="#">Recuperación de cartera</a></li>
-          <li><a href="#">Trámite de pasaporte</a></li>
-          <li><a href="#">Visado para España</a></li>
-        </ul>
-      </div>
-
-      <div class="div7">
-        <h3>Contáctanos</h3>
-        <div class="servicios-lista servicios-contacto">
-          <p class="cta-text">
-            Solicita una consulta ahora mismo con uno de nuestros abogados.
-          </p>
-          <a href="https://wa.me/34654520009" class="btn-whatsapp" target="_blank" rel="noopener noreferrer"
-            aria-label="Abrir chat de WhatsApp con SAVA Advocar">
-            WhatsApp
-          </a>
+    <section class="asesoria">
+        <div class="contenedor-imagen">
+            <img src="img/persona2.png" alt="Asesor SAVA España">
         </div>
-      </div>
+        <div class="contenedor-texto">
+            <p>
+                En <strong>SAVA España</strong> encuentras un aliado legal confiable y cercano.
+                Escríbenos y recibe una primera asesoría clara y sin compromiso.
+            </p>
+            <a href="#contacto" class="btn-contacto">Contáctanos hoy mismo</a>
+        </div>
+    </section>
 
-    </div>
-
-    <!-- Línea divisoria y logo inferior -->
-    <div class="divider"></div>
-    <div class="footer-logo">
-      <img src="img/Logo Trans.png" alt="Logo SAVA Advocar inferior" />
-    </div>
-  </footer>
 </body>
 
 </html>

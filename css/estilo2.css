@@ -1,7 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Gandhi+Sans&family=Gandhi+Serif&display=swap');
+
+/*Gandhi Serif=>Textos informativos
+Gandhi Sans=>Elementos publicitarios y textos no tan extensos*/
+/* Asegura que padding y border no afecten ancho total */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: auto;
+    scroll-behavior: smooth;
+}
+
+/*HEADER*/
+header.encabezado {
+    display: flex;
+    flex-direction: column;
+    background: #B82F25;
+    min-height: 45px;
+    /*position: sticky; */
+    overflow: visible;
+}
+
+div.cabecera {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+    /*border-right: solid; */
+}
+
+.logo {
+    display: flex;
+    margin-right: 20px;
+    /* Add margin to the right for spacing */
+}
+
+.logo img {
+    height: 60px;
+}
+
+.nit {
+    color: #fff;
+    font-size: 0.9rem;
+    font-family: 'Gandhi Sans', sans-serif;
+    margin: 0;
+}
+
+div.iconos i {
+    padding-right: 15px;
+    color: #FFFF;
+}
+
+.separador {
+    height: 25px;
+    /*background-color: #FFFF;*/
+    margin: 0 20px;
+    border-right: 1.5px solid #FFFF;
+}
+
+/* Definir un espaciado diferente en la segunda línea */
+.separador:last-child {
+    margin: 0 40px 0 4px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    padding: 20px 40px;
+    background: #FFFF;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    /*PARA ANIMACIÓN DE SCROLL*/
+}
+
+/*PARA ANIMACION DE SCROLL*/
+.nav.scrolled {
+    /* Fondo más sólido o con transparencia para que no se mezcle */
+    background-color: rgba(255, 255, 255, 0.95);
+
+    /* Agrega una sombra para que "salte" sobre el contenido */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    /* Puedes reducir el padding si quieres que sea más compacta al hacer scroll */
+    padding: 15px 80px;
+
+    /* Agrega una transición para que el cambio sea suave */
+    transition: all 0.3s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #000000;
+    font-family: 'Gandhi Sans', sans-serif;
+}
+
+.menu-toggle,
+.close-menu,
+.mobile-menu-title {
+    display: none;
+}
+
+.nav .nav-menu {
+    display: flex;
+    /* Asegura que los enlaces sigan en línea */
+}
+
+.nav-menu ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    /* elimina viñetas */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    display: inline-block;
+    font-weight: 600;
+    padding-right: 30px;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Gandhi Sans', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/*nav a {
+    display: inline-block;                 
+    font-weight: 600;
+    padding-right: 30px;
+    transition: color 0.3s ease, transform 0.3s ease; /* <– incluye transform 
+    will-change: transform;
+}*/
+
+nav a:hover {
+    color: #D19733;
+    transform: translateY(2px);
+    /* puedes combinar más efectos */
+}
+
+/* -------- BOTÓN FLOTANTE WHATSAPP -------- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .banner-section {
-    position: relative;      /* para poder posicionar el texto encima */
+    position: relative;
+    /* para poder posicionar el texto encima */
     width: 100%;
-    height: auto;           /* altura fija para el banner */
+    height: auto;
+    /* altura fija para el banner */
     overflow: hidden;
 }
 
@@ -17,20 +199,220 @@
     top: 50%;
     left: 23%;
     right: 10%;
-    transform: translate(-50%, -50%); /* centra horizontal y vertical */
+    transform: translate(-50%, -50%);
+    /* centra horizontal y vertical */
     text-align: left;
     color: #fff;
-    padding: 0 20px;         
-    max-width: 40%; 
-    font-family: 'Gandhi Sans', sans-serif;           
+    padding: 0 20px;
+    max-width: 40%;
+    font-family: 'Gandhi Sans', sans-serif;
 }
 
-.texto1 h2 {    
-    font-size: 2rem;         /* tamaño grande de título */
+.texto1 h2 {
+    font-size: 2rem;
+    /* tamaño grande de título */
     font-weight: bold;
-    line-height: 1.2;    
+    line-height: 1.2;
 }
-/*SECCIÓN SERVICIOS*/
+
+/* ============================= */
+/* SECCIÓN SERVICIOS*/
+/* ============================= */
+
+.contenido-dinamico {
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+    /*display: flex;
+        justify-content: center;
+        align-items: center;*/
+    /*margin: 30px auto;
+        padding: 0 10px; */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    row-gap: 3.5rem;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    /*
+        height: 500px;
+        margin: 50px 50px 250px 50px;
+        box-shadow: 5px 5px 20px black;
+        overflow: hidden;*/
+}
+
+/* Ajuste para la imagen */
+.contenido-img {
+    width: 350px;
+    border-radius: 10px;
+    /*height: 500px;
+        width: 350px;
+        border-radius: 3px;
+        /*width: 50%;
+        height: auto;
+        margin: 0;
+        /*order: -1;*/
+    /*Coloca la imagen en la parte superior del stack */
+}
+
+.contenido-texto {
+    width: 300px;
+    background-color: #fff;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .5);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 0.5s 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*height: 400px;
+        width: 350px;
+        padding: 6px;
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 40px;
+        background-color: #000;
+        color:#fff;*/
+}
+
+.contenido-texto h3 {
+    margin: 10px;
+    font-size: 1.2rem;
+    font-family: 'Gandhi Sans', sans-serif;
+}
+
+.contenido-texto p {
+    display: block;
+    font-size: 1rem;
+    margin: 20px;
+    font-family: 'Gandhi Serif', serif;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.contenido-lista {
+    list-style: none;
+    padding: 0;
+    /*margin-bottom: 60px;
+    margin-right: -30%;*/
+    /*width: 100%;**/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Alinea los <li> al inicio */
+}
+
+.contenido-lista li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-family: 'Gandhi Serif', serif;
+    display: flex;
+    align-items: center;
+}
+
+.contenido-lista i {
+    margin-right: 10px;
+    color: #CB4F24;
+    display: flex;
+    align-items: center;
+}
+
+.boton-accion {
+    background-color: #CB4F24;
+    color: #000;
+    border: none;
+    width: 200px;
+    /*height: 50px;*/
+    padding: 10px;
+    font-family: 'Gandhi Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    /*margin-right: 50%;*/
+    /*margin-top: 20px;*/
+}
+
+.boton-accion:hover {
+    background-color: #B82F25;
+    transform: translateY(-2px);
+}
+
+.card:hover .contenido-texto {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.card:hover {
+    animation: remove-overflow 2s forwards;
+}
+
+.card:not(:hover) {
+    animation: show-overflow 2s forwards;
+}
+
+.card:not(:hover) .contenedor-texto {
+    animation: remove-data 1s forwards;
+}
+
+@keyframes show-data {
+    50% {
+        transform: translateY(-10rem);
+    }
+
+    100% {
+        transform: translateY(-7rem);
+    }
+}
+
+@keyframes remove-overflow {
+    to {
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data {
+    0% {
+        transform: translateY(-7rem);
+    }
+
+    50% {
+        transform: translateY(-10rem);
+    }
+
+    100% {
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow {
+    0% {
+        overflow: initial;
+        pointer-events: none;
+    }
+
+    50% {
+        overflow: hidden;
+    }
+}
+
+/*SECCIÓN SERVICIOS
 
 .btn {
     display: flex;
@@ -65,7 +447,8 @@
 
 .contenido-caja {
     display: flex;
-    flex-direction: row; /* Asegura disposición horizontal */
+    flex-direction: row;
+    /* Asegura disposición horizontal 
     background-color: #000;
     color: #fff;
     border-radius: 12px;
@@ -81,7 +464,7 @@
 .contenido-img {
     width: 230px;
     height: auto;
-    /*object-fit: cover;*/
+    /*object-fit: cover;
     border-radius: 10px;
     margin: 50px 40px 50px 20px;
 }
@@ -91,7 +474,8 @@
     min-width: 250px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra todo horizontalmente */    
+    align-items: center;
+    /* Centra todo horizontalmente 
 }
 
 .contenido-texto h3 {
@@ -103,14 +487,15 @@
     width: 500px;
     display: flex;
     justify-content: center;
-    text-align: center;  /* Centra el texto */
+    text-align: center;
+    /* Centra el texto 
 }
 
 .contenido-texto p {
     font-size: 1.1rem;
     margin: 40px 50px 40px 2px;
     font-family: 'Gandhi Serif', serif;
-    line-height: 1.5;      
+    line-height: 1.5;
 }
 
 .contenido-lista {
@@ -121,7 +506,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinea los <li> al inicio */
+    align-items: flex-start;
+    /* Alinea los <li> al inicio 
 }
 
 .contenido-lista li {
@@ -142,11 +528,11 @@
 .boton-accion {
     background-color: #CB4F24;
     color: #000;
-    border: none;  
-    width: 270px;  
+    border: none;
+    width: 270px;
     height: 50px;
     padding: 10px 20px;
-    font-family: 'Gandhi Sans', sans-serif;  
+    font-family: 'Gandhi Sans', sans-serif;
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
@@ -156,17 +542,17 @@
 }
 
 .boton-accion:hover {
-  background-color: #B82F25;
-  transform: translateY(-2px);
+    background-color: #B82F25;
+    transform: translateY(-2px);
 }
-
+*/
 
 /*SECCIÓN EMPEZAR AHORA*/
 section.empieza {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Gandhi Sans', sans-serif;  
+    font-family: 'Gandhi Sans', sans-serif;
     margin-top: 20px;
     width: 100%;
 }
@@ -215,10 +601,10 @@ section.empieza {
     color: white;
 }
 
-.paso.rojo i{
-    color:#CB4F24;
-    background-color: #FFFF; 
-    margin-right: 50px;  
+.paso.rojo i {
+    color: #CB4F24;
+    background-color: #FFFF;
+    margin-right: 50px;
 }
 
 .paso.blanco {
@@ -228,20 +614,20 @@ section.empieza {
     color: #000;
 }
 
-.paso.blanco i{
-    color:#FFFF;   
+.paso.blanco i {
+    color: #FFFF;
     background-color: #CB4F24;
-    margin-left: 50px; 
+    margin-left: 50px;
 }
 
-.paso.rojo i span{
+.paso.rojo i span {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
 /*SECCIÓN ASESORIA*/
-section.asesoria{
+section.asesoria {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -251,32 +637,34 @@ section.asesoria{
     width: 100%;
     min-height: 400px;
     overflow: hidden;
-    
+
 }
 
-.contenedor-imagen{
-    flex:0 0 50%;
+.contenedor-imagen {
+    flex: 0 0 50%;
     display: flex;
     justify-content: flex-start;
     position: relative;
     align-items: center;
-    height: 100%;    
+    height: 100%;
 }
 
-.contenedor-imagen img{
-    width: 100%; 
-    max-width: 800px; /* Limita el tamaño de la imagen */
+.contenedor-imagen img {
+    width: 100%;
+    max-width: 800px;
+    /* Limita el tamaño de la imagen */
     height: auto;
     position: relative;
     object-fit: cover;
-    z-index: 2; /* Asegura que esté por encima del fondo negro del texto si se superponen */
-    
+    z-index: 2;
+    /* Asegura que esté por encima del fondo negro del texto si se superponen */
+
 }
 
 .contenedor-texto {
     flex: 1;
     background-color: #000;
-    color: #fff;    
+    color: #fff;
     display: flex;
     height: 100%;
     margin-right: 200px;
@@ -284,27 +672,27 @@ section.asesoria{
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 1;    
+    z-index: 1;
 }
 
 .contenedor-texto p {
     font-family: 'Gandhi Serif', serif;
-    font-size: 1.5rem;    
+    font-size: 1.5rem;
     line-height: 1.6;
     margin-top: 90px;
     margin-bottom: 50px;
-    max-width: 800px; 
+    max-width: 800px;
 }
 
 .contenedor-texto strong {
-    color: #CB4F24; 
+    color: #CB4F24;
 }
 
-.btn-contacto {    
+.btn-contacto {
     background-color: #CB4F24;
     color: #000;
     padding: 14px 40px;
-    font-family: 'Gandhi Sans', sans-serif;    
+    font-family: 'Gandhi Sans', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 30px;
@@ -319,64 +707,207 @@ section.asesoria{
 
 
 @media (max-width: 700px) {
+
+    .cabecera {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .cabecera h1 {
+        font-size: 0.8rem;
+    }
+
+    .cabecera .iconos i {
+        font-size: 1.2rem;
+        padding-right: 10px;
+    }
+
+    /*MENU RESPONSIVE*/
+
+    .nav .nav-menu {
+        display: none;
+        /* Ocultamos el menú por defecto en móvil */
+        /* Estilos del Menú Lateral (Off-canvas) */
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* Inicialmente fuera de la pantalla */
+        width: 80%;
+        /* Ancho del menú lateral */
+        max-width: 300px;
+        height: 100vh;
+        background-color: #B82F25;
+        flex-direction: column;
+        padding: 40px 0;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s ease-in-out;
+        /* Transición para la animación de entrada/salida */
+        z-index: 2000;
+        /* Asegura que esté encima de todo */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    /* Clase para mostrar el menú lateral */
+    .nav-menu.open {
+        left: 0;
+        display: flex;
+        /* Lo volvemos a mostrar para que la transición funcione */
+    }
+
+    /* Estilos de los enlaces dentro del menú lateral */
+    .nav-menu .nav-link {
+        color: white;
+        /* Color de texto blanco */
+        font-size: 1.5rem;
+        padding: 20px 40px;
+        width: 100%;
+        /* Ocupa todo el ancho del menú */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        /* Separador sutil */
+    }
+
+    .nav-menu .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Botón de hamburguesa */
+    .menu-toggle {
+        display: block;
+        /* Muestra el botón de hamburguesa */
+        background: none;
+        border: none;
+        color: #000000;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+        /* Evita el scroll en el body cuando el menú está abierto */
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        align-items: center;
+        padding: 20px 40px;
+        background: #FFFF;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .cabecera {
+        justify-content: center;
+    }
+
     /*BANNER*/
     .texto1 {
-        position: absolute; 
-        padding: 0 10px; 
+        position: absolute;
+        padding: 0 10px;
     }
-    
+
     .texto1 h2 {
-        font-size: 1.1rem; 
+        font-size: 1.1rem;
         line-height: 1.2;
     }
 
-    /*SECCIÓN DE SERVICIOS*/
+    /* ============================= */
+    /* SECCIÓN SERVICIOS*/
+    /* ============================= */
+
+    .container{
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        margin-inline: 1rem;
+    }
+
+    .contenido-texto{
+        width: 90%;
+        max-width: 300px;
+        padding: 1rem;
+    }
+
+    .contenido-img{
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /*SECCIÓN DE SERVICIOS
 
     .btn {
         display: flex;
         justify-content: center;
-        gap: 20px;    
-        flex-direction: column; /* Apila los botones verticalmente */       
+        gap: 20px;
+        flex-direction: column;
+        /* Apila los botones verticalmente 
         margin-right: 15%;
-        margin-left: 15%; 
+        margin-left: 15%;
         margin-top: 30px;
         padding: 0 10px;
     }
 
     .btn button {
-        width: auto; 
+        width: auto;
         padding: 12px 15px;
         font-size: 0.9rem;
-    }
+    }*/
 
-    /* ------------------- CONTENIDO DINÁMICO ------------------- */
+    /* ------------------- CONTENIDO DINÁMICO ------------------- 
     #contenido-dinamico {
         margin: 30px auto;
         padding: 0 10px; 
     }
 
     .contenido-caja {
-        flex-direction: column; /* Apila la imagen y el texto verticalmente */
+        flex-direction: column;  /*Apila la imagen y el texto verticalmente 
         padding: 20px;
         gap: 15px;
     }
 
-    /* Ajuste para la imagen */
+    /* Ajuste para la imagen 
     .contenido-img {
         width: 50%; 
         height: auto;
         margin: 0; 
-        order: -1; /*Coloca la imagen en la parte superior del stack */
+        order: -1; /*Coloca la imagen en la parte superior del stack 
     }
 
-    /* Ajuste para el contenedor de texto */
+    /* Ajuste para el contenedor de texto 
     .contenido-texto {
         min-width: auto;
         width: 100%;
         padding: 0;
     }
 
-    /* Ajuste para el Título (h3) */
+    /* Ajuste para el Título (h3) 
     .contenido-texto h3 {
         font-size: 0.9rem;
         width: 100%;
@@ -385,14 +916,14 @@ section.asesoria{
         justify-content: center; 
     }
 
-    /* Ajuste para la Descripción (p) */
+    /* Ajuste para la Descripción (p) 
     .contenido-texto p {
         font-size: 0.8rem;
         margin: 10px 0; 
         text-align: left;
     }
 
-    /* Ajuste para la Lista (ul) */
+    /* Ajuste para la Lista (ul) 
     .contenido-lista {
         margin-top: 20px;
         margin-bottom: 10px;
@@ -408,14 +939,14 @@ section.asesoria{
         align-items: center;
     }
 
-    /* Ajuste para el Botón de Acción */
+    /* Ajuste para el Botón de Acción 
     .boton-accion {
         display: flex;
         justify-content: center;
         align-items: center;
         width: auto;
         font-family: 'Gandhi Sans', sans-serif; 
-        margin-right: 0; /* Elimina el margen derecho de escritorio */
+        margin-right: 0; /* Elimina el margen derecho de escritorio 
         margin-top: 15px;
         font-size: 0.8rem;
     }
@@ -423,7 +954,8 @@ section.asesoria{
     /*SECCIÓN DE EMPIEZA*/
 
     .titulo h3 {
-        font-size: 1.3rem; /* Reduce el tamaño del título principal */
+        font-size: 1.3rem;
+        /* Reduce el tamaño del título principal */
     }
 
     .paso {
@@ -432,10 +964,10 @@ section.asesoria{
         align-items: center;
         justify-content: center;
         padding: 15px 10px;
-              
+
     }
 
-    .paso i{
+    .paso i {
         display: flex;
         justify-content: center;
         text-align: center;
@@ -445,29 +977,31 @@ section.asesoria{
         line-height: 0;
     }
 
-    .paso span{
+    .paso span {
         font-size: 1.1rem;
-    } 
+    }
 
 
     /*SECCIÓN ASESORIA*/
-    section.asesoria{
+    section.asesoria {
         flex-direction: column;
         width: 100%;
         min-height: auto;
         padding: 40px 20px;
-        overflow-x: hidden;      
+        overflow-x: hidden;
     }
 
-    .contenedor-imagen{
+    .contenedor-imagen {
         display: none;
     }
 
-    .contenedor-texto{
+    .contenedor-texto {
         display: flex;
-        flex-direction: column; /* Apila los párrafos y el botón */
+        flex-direction: column;
+        /* Apila los párrafos y el botón */
         justify-content: center;
-        align-items: center; /* Centra horizontalmente todo el contenido (texto y botón) */
+        align-items: center;
+        /* Centra horizontalmente todo el contenido (texto y botón) */
         font-size: 0.7rem;
         width: 100%;
         margin-right: 0;
@@ -476,20 +1010,21 @@ section.asesoria{
 
     .contenedor-texto p {
         font-family: 'Gandhi Serif', serif;
-        font-size: 1.3rem;    
+        font-size: 1.3rem;
         margin-top: 20px;
         margin-bottom: 20px;
-        padding: 0 10px;  
+        padding: 0 10px;
         max-width: 100%;
     }
 
     .btn-contacto {
-        display: flex; 
-        justify-content: center; 
+        display: flex;
+        justify-content: center;
         align-items: center;
-        width: 250px; 
+        width: 250px;
         height: 45px;
-        margin: 10px auto 30px auto; /* Lo centra horizontalmente (auto) y le da espacio vertical */
+        margin: 10px auto 30px auto;
+        /* Lo centra horizontalmente (auto) y le da espacio vertical */
         font-size: 0.9rem;
     }
 }
