@@ -81,6 +81,152 @@
     background-color: #d13a30;
 }
 
+/* -------- FORMULARIO -------- */
+/* CONTENEDOR GENERAL */
+.container {
+    position: relative;
+    width: 850px;
+    height: 550px;
+    margin: 40px auto;
+    background: #f3f3f3;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+}
+
+/* FORMULARIO */
+.form-box {
+    font-family: 'Gandhi Serif', serif;
+    position: absolute;
+    background: #fff;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.8s ease-in-out;
+    z-index: 2;
+}
+
+.form-box h1 {
+    font-family: 'Gandhi Sans', sans-serif;
+    margin-bottom: 30px;
+}
+
+.input-box {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    font-family: 'Gandhi Serif', serif;
+    padding: 12px;
+    background: #eee;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.btn-submit {
+    font-family: 'Gandhi Sans', sans-serif;
+    padding: 12px;
+    background: #7ea0ff;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #5a84f3;
+}
+
+/* PANEL MORADO */
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    transition: 0.8s;
+    z-index: 1;
+}
+
+.toggle-panel h1 {
+    font-size: 2rem;
+}
+
+.toggle-left {
+    left: 0;
+    background: #8ea7ff;
+}
+
+.toggle-right {
+    right: 0;
+    background: #8ea7ff;
+    opacity: 0;
+}
+
+/* CAJA ANIMADA */
+.toggle-box {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #8ea7ff;
+    left: 0;
+    border-radius: 30px 0 0 30px;
+    transition: 0.8s ease-in-out;
+    z-index: 0;
+}
+
+/* ESTADO ACTIVO DESPUÉS DE ENVIAR */
+.container.active .toggle-box {
+    left: 50%;
+    border-radius: 0 30px 30px 0;
+}
+
+.container.active .form-box {
+    right: 50%;
+}
+
+.container.active .toggle-left {
+    opacity: 0;
+}
+
+.container.active .toggle-right {
+    opacity: 1;
+}
+
+/* MENSAJE DE ÉXITO */
+.mensaje-enviado {
+    position: absolute;
+    top: 30px;
+    right: 50%;
+    transform: translateX(50%);
+    background: #4caf50;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    display: none;
+    z-index: 10;
+}
+
+
 @media (max-width: 700px) {
     /* -------- SECCIÓN DE CONTACTO -------- */
     .contacto-cards {

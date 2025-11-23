@@ -43,7 +43,7 @@
     display: grid;
     place-items: center;
     margin-inline: 1.5rem;
-    padding-block: 5rem;
+    padding-block: 3rem;
     /*display: flex;
         justify-content: center;
         align-items: center;*/
@@ -68,6 +68,27 @@
         overflow: hidden;*/
 }
 
+#titulo-superior {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Gandhi Sans', sans-serif;
+    width: 90%;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #fff;
+
+    background: rgba(0, 0, 0, 0.65); /* Fondo negro con opacidad */
+    border-radius: 10px;
+
+    z-index: 5;
+
+    opacity: 1;
+    transition: opacity .4s ease;
+}
+
 /* Ajuste para la imagen */
 .contenido-img {
     width: 350px;
@@ -85,6 +106,7 @@
 .contenido-texto {
     width: 300px;
     background-color: #fff;
+    font-family: 'Gandhi Serif', serif;
     padding: 1.5rem 2rem;
     box-shadow: 0 8px 24px hsla(0, 0%, 0%, .5);
     border-radius: 1rem;
@@ -94,7 +116,7 @@
     right: 0;
     margin-inline: auto;
     opacity: 0;
-    transition: opacity 0.5s 0.5s;
+    transition: opacity 0.7s 0.7s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,11 +205,15 @@
     animation: remove-overflow 2s forwards;
 }
 
+.card:hover #titulo-superior {
+    opacity: 0;
+}
+
 .card:not(:hover) {
     animation: show-overflow 2s forwards;
 }
 
-.card:not(:hover) .contenedor-texto {
+.card:not(:hover) .contenido-texto {
     animation: remove-data 1s forwards;
 }
 
