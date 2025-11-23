@@ -390,7 +390,6 @@
   font-size: 1.5rem;
 }
 
-
 h5 {
   display: flex;
   justify-content: center;
@@ -408,7 +407,8 @@ h5 {
   gap: 40px;
 
   width: 100%;
-  padding: 40px 0;
+  padding: 10px 0;
+  margin: 10px 0;
 }
 
 /* --------------------------
