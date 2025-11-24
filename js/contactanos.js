@@ -106,6 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
             email.classList.add("error");
         }
 
+        const telefono = document.getElementById("telefono");
+        const expTel = /^[0-9\s+\-()]{7,}$/; // acepta números, espacios y símbolos comunes
+
+        if (!expTel.test(telefono.value.trim())) {
+            datosCorrectos = false;
+            error += "\n - Número telefónico inválido";
+            telefono.classList.add("error");
+        }
+
         const mensaje = document.getElementById("mensaje");
         if (mensaje.value.trim().length < 30) {
             datosCorrectos = false;
