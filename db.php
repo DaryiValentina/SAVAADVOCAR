@@ -1,11 +1,11 @@
 <?php
 // db.php - archivo de configuración de la BD
 
-$DB_HOST = '127.0.0.1';     // SIN :3306
-$DB_PORT = '3306';          // Puerto separado
+$DB_HOST = 'localhost';
+$DB_PORT = '3306';
 $DB_NAME = 'u537060646_Usuarios';
 $DB_USER = 'u537060646_Nick';
-$DB_PASS = '7dU16XgZ;';
+$DB_PASS = '7dU16XgZ;'; // <-- SIN ; extra
 
 // Opciones PDO
 $options = [

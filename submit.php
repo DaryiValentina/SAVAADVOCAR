@@ -2,6 +2,8 @@
 header('Content-Type: application/json; charset=utf-8');
 require_once 'db.php';
 
+error_log("submit.php: REQUEST_METHOD=" . $_SERVER['REQUEST_METHOD']); // debug
+
 function clean($s) { return trim($s); }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

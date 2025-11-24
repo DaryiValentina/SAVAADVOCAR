@@ -1,9 +1,10 @@
+console.log("INICIO JS CARGADO");
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const closeMenu = document.querySelector('.close-menu');
     const navMenu = document.querySelector('.nav-menu');
     const body = document.body;
-    
+
     // Crear el overlay dinámicamente
     const overlay = document.createElement('div');
     overlay.classList.add('overlay');
@@ -31,14 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeMenu) {
         closeMenu.addEventListener('click', closeMenuHandler);
     }
-    
+
     // Cerrar menú al hacer clic en un enlace o en el overlay
     navMenu.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', closeMenuHandler);
     });
 
     overlay.addEventListener('click', closeMenuHandler);
-    
+
     // Mantener tu funcionalidad de scroll para la barra de navegación (si existe)
     // Ejemplo:
     const headerNav = document.querySelector('.nav');
@@ -49,20 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
             headerNav.classList.remove('scrolled');
         }
     });
-});
-
-// -------------------------
-// ENVÍO DEL FORMULARIO POR AJAX
-// -------------------------
-document.addEventListener("DOMContentLoaded", () => {
+    console.log("BLOQUE DEL FORM SE ESTÁ EJECUTANDO");
     const form = document.getElementById("asesoriaForm");
     const btn = document.getElementById("form-btn");
     const msg = document.getElementById("form-msg");
 
+    
+// -------------------------
+// ENVÍO DEL FORMULARIO POR AJAX
+// -------------------------
     if (form) {
         form.addEventListener("submit", async (e) => {
-            e.preventDefault(); // evitar recargar página
+            e.preventDefault();
 
+            console.log("Form submit interceptado");
             msg.textContent = "";
             btn.disabled = true;
             btn.textContent = "Enviando...";
@@ -70,12 +71,28 @@ document.addEventListener("DOMContentLoaded", () => {
             const formData = new FormData(form);
 
             try {
-                const response = await fetch("submit.php", {
+                const response = await fetch("/submit.php", { // <- uso absoluta con /
                     method: "POST",
-                    body: formData
+                    body: formData,
+                    headers: {
+                        "Accept": "application/json"
+                    }
                 });
 
-                const data = await response.json();
+                const text = await response.text(); // leer raw
+                console.log("Respuesta raw:", text);
+
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (err) {
+                    console.error("JSON parse error:", err, "raw:", text);
+                    msg.style.color = "red";
+                    msg.textContent = "Respuesta inesperada del servidor.";
+                    btn.disabled = false;
+                    btn.textContent = "Enviar";
+                    return;
+                }
 
                 if (data.status === "ok") {
                     msg.style.color = "limegreen";
@@ -87,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
             } catch (error) {
+                console.error("Fetch error:", error);
                 msg.style.color = "red";
                 msg.textContent = "Error de conexión con el servidor.";
             }
