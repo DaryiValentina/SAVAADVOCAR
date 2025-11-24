@@ -175,6 +175,8 @@
 }
 
 .boton-accion {
+    display: inline-block;
+    text-align: center;
     background-color: #CB4F24;
     color: #000;
     border: none;
