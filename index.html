@@ -186,23 +186,26 @@
 
       <!-- COLUMNA DERECHA -->
       <div class="asesoria-col derecha">
-        <form class="asesoria-form">
+        <form class="asesoria-form" action="submit.php" method="post">
           <h4 class="form-titulo">Solicita tu asesoría</h4>
 
           <label>Nombre completo</label>
-          <input type="text">
+          <input type="text" name="nombre" required>
 
           <label>Correo electrónico</label>
-          <input type="email">
-
+          <input type="email" name="email" required>
+          
           <label>Número telefónico</label>
-          <input type="number">
+          <input type="tel" name="telefono">
 
           <label>Cuéntanos tu caso</label>
-          <textarea></textarea>
+          <textarea name="mensaje" rows="4" required></textarea>
 
-          <button class="btn form-btn">Enviar</button>
+          <input type="hidden" name="origen" value="web_inicio">
+
+          <button class="btn form-btn" type="submit">Enviar</button>
         </form>
+
       </div>
 
 
