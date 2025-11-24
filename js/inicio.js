@@ -50,3 +50,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// -------------------------
+// ENVÍO DEL FORMULARIO POR AJAX
+// -------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("asesoriaForm");
+    const btn = document.getElementById("form-btn");
+    const msg = document.getElementById("form-msg");
+
+    if (form) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault(); // evitar recargar página
+
+            msg.textContent = "";
+            btn.disabled = true;
+            btn.textContent = "Enviando...";
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch("submit.php", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.status === "ok") {
+                    msg.style.color = "limegreen";
+                    msg.textContent = "¡Solicitud enviada correctamente!";
+                    form.reset();
+                } else {
+                    msg.style.color = "red";
+                    msg.textContent = data.message || "Error al enviar.";
+                }
+
+            } catch (error) {
+                msg.style.color = "red";
+                msg.textContent = "Error de conexión con el servidor.";
+            }
+
+            btn.disabled = false;
+            btn.textContent = "Enviar";
+        });
+    }
+});

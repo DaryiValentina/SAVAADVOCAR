@@ -2,10 +2,10 @@
 // db.php - archivo de configuración de la BD
 // Rellena con tu host, dbname, usuario y password desde Hostinger
 
-$DB_HOST = 'TU_HOST_DE_DB';      // ej: localhost o mysqlxxx.hostinger.com
-$DB_NAME = 'sava_site';
-$DB_USER = 'usuario_db';
-$DB_PASS = 'contraseña_segura';
+$DB_HOST = 'sava.com.es';      // ej: localhost o mysqlxxx.hostinger.com
+$DB_NAME = 'u537060646_Usuarios';
+$DB_USER = 'u537060646_Nick';
+$DB_PASS = '7dU16XgZ';
 
 // Opciones PDO
 $options = [

@@ -186,7 +186,7 @@
 
       <!-- COLUMNA DERECHA -->
       <div class="asesoria-col derecha">
-        <form class="asesoria-form" action="submit.php" method="post">
+        <form class="asesoria-form" id="asesoriaForm">
           <h4 class="form-titulo">Solicita tu asesoría</h4>
 
           <label>Nombre completo</label>
@@ -194,7 +194,7 @@
 
           <label>Correo electrónico</label>
           <input type="email" name="email" required>
-          
+
           <label>Número telefónico</label>
           <input type="tel" name="telefono">
 
@@ -203,8 +203,12 @@
 
           <input type="hidden" name="origen" value="web_inicio">
 
-          <button class="btn form-btn" type="submit">Enviar</button>
+          <button class="btn form-btn" id="form-btn" type="submit">Enviar</button>
+
+          <!-- Contenedor para mensajes -->
+          <p id="form-msg" style="margin-top:10px;"></p>
         </form>
+
 
       </div>
 
