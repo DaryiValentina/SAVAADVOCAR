@@ -1,141 +1,534 @@
-  /* ===========================
-     Base / variables
-     =========================== */
-  :root{
-    --accent: #b5312e;
-    --accent-dark: #92231e;
-    --muted: #666;
-    --bg-panel: rgba(255,255,255,0.03);
-    --max-width: 1160px;
-    --gutter: 20px;
-    --radius: 12px;
+/* =========================
+   Estilo principal - estilo3.css
+   (Diseño enfocado a la página España)
+   ========================= */
+
+:root {
+  --accent: #b5312e;
+  --accent-dark: #92231e;
+  --muted: #666;
+  --bg-panel: rgba(255, 255, 255, 0.03);
+  --max-width: 1160px;
+  --gutter: 20px;
+  --radius: 12px;
+  --text-dark: #111;
+  --muted-bg: #f8f8f8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Helpers */
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.row {
+  display: flex;
+  gap: var(--gutter);
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.col {
+  flex: 1;
+  min-width: 0
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* HERO / Nosotros */
+.nosotros-section {
+  background: #fff
+}
+
+.nosotros-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.nosotros-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.48));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px
+}
+
+.nosotros-hero__content {
+  width: 92%;
+  max-width: 980px;
+  color: #fff;
+  text-align: center;
+  padding: 28px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.03));
+  backdrop-filter: blur(2px)
+}
+
+.nosotros-title {
+  font-size: 3.5rem;
+  margin: 0 0 8px;
+  letter-spacing: .4px
+}
+
+.nosotros-subtitle {
+  margin: 25px;
+  font-size: 1.75rem;
+  opacity: .95
+}
+
+.nosotros-cta {
+  display: inline-block;
+  padding: 10px 30px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 22px;
+  font-weight: 700
+}
+
+.nosotros-cta:hover {
+  background: var(--accent-dark);
+  transform: translateY(-3px);
+  transition: .18s
+}
+
+/* Info grid */
+.nosotros-info {
+  padding: 15px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: var(--max-width);
+  margin: 0 auto
+}
+
+.info-card {
+  background: var(--muted-bg);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04)
+}
+
+.info-card h3 {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 1.05rem
+}
+
+.info-card p {
+  margin: 0;
+  line-height: 1.45;
+  color: #333
+}
+
+.valores-list {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  color: #333
+}
+
+/* Timeline / Historia */
+.historia {
+  margin-top: 40px 0;
+  padding: 18px;
+}
+
+.timeline {
+  display: grid;
+  margin-top: 20px;
+  gap: 12px
+}
+
+.timeline-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  /* <- aquí */
+  background: rgba(0, 0, 0, 0.02);
+  padding: 14px;
+  border-radius: 10px;
+}
+
+.timeline-year {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--accent);
+  min-width: 78px;
+  text-align: center;
+}
+
+
+
+.timeline-body h4 {
+  margin: 0 0 6px;
+}
+
+.timeline-body p {
+  margin: 0;
+  color: #333;
+  line-height: 1.45;
+}
+
+/* Cards */
+.nosotros-cards {
+  max-width: var(--max-width);
+  margin: 18px auto;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #111;
+  min-height: 260px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.card-media {
+  height: 160px;
+  background-size: cover;
+  background-position: center
+}
+
+.card h4 {
+  margin: 16px 18px 6px;
+  color: var(--accent);
+  font-size: 1.05rem
+}
+
+.card p {
+  margin: 0 18px 18px;
+  color: #333;
+  line-height: 1.45;
+  flex: 1
+}
+
+/* Hover animado */
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Efecto sutil en la imagen */
+.card-media {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-media {
+  transform: scale(1.08);
+}
+
+/* Extranjeria section */
+.extranjeria {
+  margin-top: 50px;
+  background: linear-gradient(180deg, rgba(181, 49, 46, 0.03), rgba(0, 0, 0, 0.01));
+  padding: 34px;
+  border-radius: 20px;
+}
+
+.extranjeria .extranjeria-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: center
+}
+
+.extranjeria h3 {
+  color: var(--accent);
+  font-size: 1.6rem;
+  margin: 0 0 12px
+}
+
+.extranjeria p {
+  margin: 0 0 12px;
+  color: #333;
+  line-height: 1.6
+}
+
+.extranjeria .hero-img {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08)
+}
+
+/* Steps */
+.trabajamos {
+  padding: 34px;
+}
+
+.trabajamos .wrap {
+  max-width: var(--max-width)
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 18px
+}
+
+.step {
+  background: var(--muted-bg);
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04)
+}
+
+.step .ico {
+  display: inline-flex;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 10px
+}
+
+.step h4 {
+  margin: 0 0 8px;
+  color: var(--accent)
+}
+
+.step p {
+  margin: 0;
+  color: #333;
+  line-height: 1.4
+}
+
+/* CTA final */
+.cta-final {
+  padding: 48px 0;
+  background: linear-gradient(90deg, rgba(184, 47, 37, 0.95), rgba(209, 151, 51, 0.95));
+  color: #fff;
+  text-align: center
+}
+
+.cta-final h2 {
+  font-size: 2rem;
+  margin: 0 0 10px
+}
+
+.cta-final p {
+  margin: 0 0 16px;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.cta-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap
+}
+
+/* BOTÓN */
+.btn {
+  display: inline-flex;
+  /* permite centrar el texto */
+  justify-content: center;
+  /* centra horizontalmente */
+  align-items: center;
+  /* centra verticalmente */
+  background: linear-gradient(180deg, #b5312e 0%, #d14825 100%);
+  color: white;
+  border: none;
+  font-family: 'Gandhi Sans', sans-serif;
+  border-radius: 25px;
+  padding: 20px 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(180deg, #92231e 0%, #b5312e 100%);
+}
+
+/* Divider and copyright */
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 18px 0
+}
+
+.copyright {
+  font-size: .95rem;
+  color: var(--muted);
+  padding-bottom: 18px
+}
+
+/* Responsive */
+@media (max-width:1100px) {
+  .nosotros-cards {
+    grid-template-columns: 1fr 1fr
   }
 
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0;font-family:"Gandhi Sans",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; color:#111;background:#fff;}
-  a {color: inherit; text-decoration: none;}
-  img{max-width:100%;display:block;height:auto;}
-
-  /* small helpers */
-  .wrap {max-width:var(--max-width);margin:0 auto;padding:0 18px;}
-  .row{display:flex;gap:var(--gutter);flex-wrap:wrap;align-items:stretch;}
-  .col{flex:1;min-width:0}
-
-  /* ===========================
-     HERO / Nosotros (más compacto y responsive)
-     =========================== */
-  .nosotros-section{background:#fff}
-  .nosotros-hero{
-    position:relative;
-    background-image:url('/mnt/data/1.png');
-    background-size:cover;
-    background-position:center;
-    height:360px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:32px;
-  }
-  .nosotros-hero__overlay{
-    position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(0,0,0,0.30),rgba(0,0,0,0.45));
-    display:flex;align-items:center;justify-content:center;padding:24px;
-  }
-  .nosotros-hero__content{
-    width:92%;max-width:980px;color:#fff;text-align:center;
-    padding:22px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.03));
-    backdrop-filter: blur(2px);
-  }
-  .nosotros-title{font-size:2.6rem;margin:0 0 8px;text-shadow:0 6px 18px rgba(0,0,0,0.45);letter-spacing:.6px}
-  .nosotros-subtitle{margin:0 0 16px;font-size:1.05rem;opacity:.95}
-  .nosotros-cta{display:inline-block;padding:10px 18px;background:var(--accent);color:#fff;border-radius:22px;font-weight:700}
-  .nosotros-cta:hover{background:var(--accent-dark);transform:translateY(-3px);transition:.18s}
-
-  /* ===========================
-     INFO GRID (Misión / Visión / Valores)
-     =========================== */
-  .nosotros-info{padding:28px 0 8px}
-  .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:var(--max-width);margin:0 auto;padding:0 18px}
-  .info-card{background:var(--bg-panel);padding:20px;border-radius:var(--radius);box-shadow:0 8px 18px rgba(0,0,0,0.06)}
-  .info-card h3{margin:0 0 10px;color:var(--accent);font-size:1.05rem}
-  .info-card p{margin:0;line-height:1.45;color:#222}
-  .valores-list{margin:6px 0 0;padding-left:18px;color:#222}
-
-  /* ===========================
-     CARDS (beneficios/equipo)
-     =========================== */
-  .nosotros-cards{max-width:var(--max-width);margin:28px auto;padding:0 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));border-radius:14px;overflow:hidden;display:flex;flex-direction:column;color:#111;min-height:300px;box-shadow:0 8px 22px rgba(0,0,0,0.08)}
-  .card-media{height:160px;background-size:cover;background-position:center}
-  .card h4{margin:16px 18px 6px;color:var(--accent)}
-  .card p{margin:0 18px 18px;color:#333;line-height:1.45;flex:1 0 auto}
-
-  /* ===========================
-     Asesoría en Extranjería (nueva sección)
-     =========================== */
-  .extranjeria{
-    background:linear-gradient(180deg, rgba(181,49,46,0.05), rgba(0,0,0,0.01));
-    padding:40px 0;
-  }
-  .extranjeria .wrap{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
-  .extranjeria h3{color:var(--accent);font-size:1.8rem;margin:0 0 12px}
-  .extranjeria p{margin:0 0 16px;color:#222;line-height:1.6}
-  .extranjeria .hero-img{width:100%;height:260px;border-radius:12px;background-image:url('/mnt/data/2.png');background-size:cover;background-position:center;box-shadow:0 8px 20px rgba(0,0,0,0.08)}
-
-  .extranjeria .cta-row{display:flex;gap:12px;align-items:center}
-  .extranjeria .cta-row .btn{padding:12px 18px;border-radius:22px;font-weight:700}
-  .extranjeria .note{font-size:.95rem;color:var(--muted)}
-
-  /* ===========================
-     Cómo trabajamos (sección sorpresa)
-     =========================== */
-  .trabajamos{padding:34px 0;background:#fff}
-  .trabajamos .wrap{max-width:var(--max-width);padding:0 18px}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
-  .step{background:var(--bg-panel);padding:18px;border-radius:12px;text-align:center;box-shadow:0 8px 22px rgba(0,0,0,0.04)}
-  .step .ico{display:inline-flex;width:60px;height:60px;border-radius:12px;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-size:22px;margin-bottom:10px}
-  .step h4{margin:0 0 8px;color:var(--accent)}
-  .step p{margin:0;color:#333;line-height:1.4}
-
-  /* ===========================
-     GRAN CTA final
-     =========================== */
-  .cta-final{padding:48px 0;background:linear-gradient(90deg, rgba(181,49,46,0.95), rgba(209,151,51,0.95)); color:#fff}
-  .cta-final .wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
-  .cta-final h2{font-size:2.6rem;margin:0;text-shadow:0 6px 18px rgba(0,0,0,0.2)}
-  .cta-final p{margin:0;max-width:780px;text-align:center}
-  .cta-final .cta-actions{display:flex;gap:12px;flex-wrap:wrap}
-  .cta-final .cta-actions .btn{background:#fff;color:var(--accent);padding:12px 18px;border-radius:40px;font-weight:800}
-  .cta-final .cta-actions .btn.whatsapp{background:rgba(0,0,0,0.08);color:#fff;border:2px solid rgba(255,255,255,0.08)}
-
-  /* ===========================
-     Responsive
-     =========================== */
-  @media (max-width:1100px){
-    .nosotros-cards{grid-template-columns:1fr 1fr;gap:16px}
-    .info-grid{grid-template-columns:1fr 1fr;gap:16px}
-    .extranjeria .wrap{grid-template-columns:1fr 360px}
-  }
-  @media (max-width:780px){
-    .nosotros-hero{height:260px}
-    .nosotros-title{font-size:1.8rem}
-    .nosotros-subtitle{font-size:.98rem}
-    .info-grid{grid-template-columns:1fr}
-    .nosotros-cards{grid-template-columns:1fr;gap:14px}
-    .card{min-height:220px}
-    .card-media{height:140px}
-    .extranjeria .wrap{grid-template-columns:1fr;grid-auto-rows:auto}
-    .extranjeria .hero-img{height:220px}
-    .steps{grid-template-columns:1fr 1fr; gap:12px}
-    .step .ico{width:50px;height:50px}
-    .cta-final h2{font-size:1.8rem}
-  }
-  @media (max-width:420px){
-    .nosotros-hero{height:220px}
-    .nosotros-title{font-size:1.5rem}
-    .steps{grid-template-columns:1fr;gap:12px}
-    .extranjeria .hero-img{height:160px}
+  .info-grid {
+    grid-template-columns: 1fr 1fr
   }
 
-  /* Small visual polish */
-  h2,h3,h4{font-family:"Gandhi Serif",serif}
+  .extranjeria .extranjeria-inner {
+    grid-template-columns: 1fr 360px
+  }
+}
+
+@media (max-width:780px) {
+  .nosotros-hero {
+    height: 300px
+  }
+
+  .nosotros-title {
+    font-size: 2.5rem
+  }
+
+  .nosotros-subtitle {
+    font-size: 1.4rem
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr
+  }
+
+  .info-card h3 {
+    font-size: 2.05rem
+  }
+
+  .info-card p {
+    font-size: 1.2rem;
+  }
+
+  .info-card .valores-list {
+    font-size: 1.2rem;
+  }
+  
+  .timeline-year {
+    font-size: 1.6rem;
+  }
+  .timeline-body h4 {
+    font-size: 1.3rem;
+  }
+  .timeline-body p {
+    font-size: 1.2rem;
+  }
+  .card h4{
+    font-size: 1.7rem;
+  }
+  .card p{
+    font-size: 1.2rem;
+  }
+  .extranjeria h3{
+    font-size: 2.4rem;
+  }
+  .extranjeria p{
+    font-size: 1.3rem;
+  }
+  .extranjeria .btn{
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+  }
+  .trabajamos h3{
+    font-size: 1.5rem;
+  }
+  .trabajamos p{
+    font-size: 1.3rem;
+  }
+  .step .ico{
+    font-size: 2rem;
+  }
+  .step h4{
+    font-size: 1.5rem;
+  }
+  .step p{
+    font-size: 1.3rem;
+  }
+  .cta-final h2{
+    font-size: 2rem;
+  }
+  .cta-final p{
+    font-size: 1.2rem;
+  }
+  .cta-final .btn{
+    font-size: 1.2rem;
+  }
+  .nosotros-cards {
+    grid-template-columns: 1fr
+  }
+
+  .extranjeria .extranjeria-inner {
+    grid-template-columns: 1fr
+  }
+
+  .steps {
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+@media (max-width:420px) {
+  .nosotros-hero {
+    height: 220px
+  }
+
+  .nosotros-title {
+    font-size: 1.2rem
+  }
+
+  .steps {
+    grid-template-columns: 1fr
+  }
+}
