@@ -34,7 +34,7 @@ div.cabecera {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  padding: 10px;
+  padding: 6px;
   margin: 0;
   /*border-right: solid; */
 }
@@ -55,7 +55,10 @@ div.cabecera {
   font-family: 'Gandhi Sans', sans-serif;
   margin: 0;
 }
-
+.iconos {
+  display: flex;
+  align-items: center;
+}
 div.iconos i {
   padding-right: 15px;
   color: #FFFF;
@@ -73,6 +76,12 @@ div.iconos i {
   margin: 0 40px 0 4px;
 }
 
+.iconos .icono-white{
+  font-size: 1rem;
+}
+.icono-admin i {
+  font-size: 1.7rem;
+}
 .nav {
   display: flex;
   justify-content: space-between;
