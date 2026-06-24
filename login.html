@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Administrador</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gandhi+Sans&family=Gandhi+Serif&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h3,
+        button,
+        input {
+            font-family: 'Gandhi Sans', sans-serif;
+        }
+
+        h2 {
+            font-family: 'Gandhi Serif', serif;
+            font-size: 30px;
+            text-align: center;
+            color: #CB4F24;
+        }
+
+        .logoT {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+        }
+
+        body {
+            height: 100vh;
+            font-family: 'Gandhi Serif', serif;
+
+            /* IMAGEN DE FONDO */
+            background-image: url('./img/Fondoo.png');
+            /* <-- tu imagen */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* CENTRADO */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-login {
+            display: flex;
+            position: relative;
+            width: 1000px;
+            height: 550px;
+            margin: 40px auto;
+            background: #f3f3f3;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* IZQUIERDA */
+        .login-left {
+            width: 50%;
+            padding: 20px   50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* DERECHA */
+        .login-right {
+            width: 50%;
+            background-image: url('./img/sev-otros.jpg');
+            /* imagen grande */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .login-right h3 {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'Gandhi Sans', sans-serif;
+            font-size: 50px;
+            z-index: 1;
+        }
+
+        .login-right::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(245, 73, 39, 0.5);
+            z-index: 0;
+        }
+
+        /* LOGO */
+        .logo {
+            position: absolute;
+            top: 450px;
+            right: 30px;
+            width: 40px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        /* ERROR */
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        .grupo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            /* separación icono / input */
+            padding: 2px 30px;
+            /* espacio interno */
+            border: 1px solid #e5e5e5;
+            /* borde visible y suave */
+            border-radius: 30px;
+            /* esquinas redondeadas */
+            background: #e5e5e5;
+            /* fondo de la caja */
+            transition: border-color .18s ease, box-shadow .18s ease;
+        }
+
+        .grupo input {
+            border: none;
+            /* el borde lo tiene la .grupo */
+            outline: none;
+            background: transparent;
+            flex: 1;
+            /* ocupa todo el espacio restante */
+            font-size: 16px;
+            padding: 10px 0;
+            /* verticalmente centrado */
+        }
+
+        /* Icono: controla su tamaño y color */
+        .grupo i {
+            font-size: 20px;
+            color: #666;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-contacto {
+            background-color: #CB4F24;
+            border: #CB4F24;
+            color: #ffffff;
+            padding: 10px 40px;
+            font-family: 'Gandhi Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-contacto:hover {
+            background-color: #D19733;
+            border: #D19733;
+        }
+
+        .separadores {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 38% auto 38%;
+            width: 100%;
+        }
+
+        .col {
+            height: 2px;
+            /*Altura de la línea*/
+        }
+
+        .bordes {
+            border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+        }
+
+        @media (max-width: 700px) {
+            .btn-contacto {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 250px;
+                height: 45px;
+                margin: 10px auto 30px auto;
+                /* Lo centra horizontalmente (auto) y le da espacio vertical */
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-login">
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="login-left">
+            <h2>Bienvenido a</h2>
+            <img src='./img/Logo Transparente.png' alt="SAVA ADVOCAR Logo" class="logoT">
+            <?php if ($error): ?>
+            <p class="error">
+                <?= $error ?>
+            </p>
+            <?php endif; ?>
+
+            <form method="POST">
+                <div class="grupo">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="usuario" placeholder="Usuario" required>
+                </div>
+
+                <div class="grupo">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="clave" placeholder="Contraseña" required>
+                </div>
+
+                <button type="submit" class="btn-contacto">Ingresar</button>
+
+                <div class="separadores">
+                    <div class="col bordes"></div>
+                    <div class="col"></div>
+                    <div class="col bordes"></div>
+                </div>
+            </form>
+        </div>
+
+        <!-- COLUMNA DERECHA -->
+        <div class="login-right">
+            <h3>Tu aliado legal en cada paso</h3>
+            <img src="./img/Logo Trans.png" alt="Logo" class="logo">
+        </div>
+    </div>
+
+</body>
+
+</html>
